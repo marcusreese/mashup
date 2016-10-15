@@ -32,7 +32,7 @@
     * `ng g component header`
     * `ng g component main-content`
     * `ng g component footer`
-  
+ 
   
 
   
