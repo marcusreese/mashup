@@ -27,7 +27,8 @@
   * Create header main and footer tags in app.component.html
     * `<header role="banner"></header>`
     * `<main role="main"></main>`
-    * `<footer role="contentinfo"></footer>`
+    * `<footer role="contentinfo"></footer>
+  * Add some styles in styles.scss and app.component.scss
   * Generate components to go in these tags
     * `ng g component header`
     * `ng g component main-content`

@@ -1,0 +1,19 @@
+header {
+  flex: 0 0 auto;
+  font-size: 1.3rem;
+  display: flex;
+}
+main {
+  flex: 1 1 100%;
+  display: block;
+  background-color: lightgray;
+}
+footer {
+  flex: 0 0 auto;
+  margin: 3px;
+  display: flex;
+  justify-content: space-between;
+  .expanded {
+    flex-basis: 50%;
+  }
+}
