@@ -27,23 +27,31 @@
   * Create header main and footer tags in app.component.html
     * `<header role="banner"></header>`
     * `<main role="main"></main>`
-    * `<footer role="contentinfo"></footer>
+    * `<footer role="contentinfo"></footer>`
   * Add some styles in styles.scss and app.component.scss
   * Create /layout/ folder.
   * Generate components to go in these tags
     * `ng g component layout/header`
     * `ng g component layout/main-content`
     * `ng g component layout/footer`
- 
+  * Copy imports those 3 imports from app.module.ts to app.component.ts.
+  * Add new tags to app.component.html (e.g. <app-header></app-header>)
+    * That breaks unit test: 'app-header' is not a known element.
+    * To fix, copy imports and declarations from app.module.ts
+    * and paste in app.component.spec.ts
+    * and for now, live with "Unused import" warnings?
+    * ng e2e works.
+    
+    
+  
+  
   
 
   
   
   * `npm install express --save` and create src/server/ folder. Still can `ng serve`.
   * `npm install @ngrx/core @ngrx/store --save` and create src/app/shared/stateStore.ts.
-  * `ng g component layout/top` and also same for `middle` and `bottom`. 
-  * Copy imports (e.g., `import { TopComponent } from './layout/top/top.component';`) from app.module.ts
-  * Paste them in app.component.ts and app.component.spec.ts.
+
   * Also copy the extra declaration lines from app.module.ts to app.component.spec.ts.
   * Add <app-top></app-top> etc. to app.component.html.
   * Can still ng test, but now there are 6 tests, not 3 (added *SUCCESS Component: Top should create an instance*, etc.)

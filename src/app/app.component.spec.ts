@@ -2,12 +2,18 @@
 
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './layout/header/header.component';
+import { MainContentComponent } from './layout/main-content/main-content.component';
+import { FooterComponent } from './layout/footer/footer.component';
 
 describe('App: Mashup', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        HeaderComponent,
+        MainContentComponent,
+        FooterComponent
       ],
     });
   });
