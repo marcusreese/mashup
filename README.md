@@ -29,10 +29,11 @@
     * `<main role="main"></main>`
     * `<footer role="contentinfo"></footer>
   * Add some styles in styles.scss and app.component.scss
+  * Create /layout/ folder.
   * Generate components to go in these tags
-    * `ng g component header`
-    * `ng g component main-content`
-    * `ng g component footer`
+    * `ng g component layout/header`
+    * `ng g component layout/main-content`
+    * `ng g component layout/footer`
  
   
 
