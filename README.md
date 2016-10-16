@@ -14,7 +14,7 @@
   * `ng new mashup --style=scss` (note: same name as repo for deploy)
   * `cd mashup`
   * `git remote add origin https://github.com/marcusreese/mashup.git`
-  * `git push -fu origin master` (the u allows future simple `git pull`)
+  * `git push -u origin master` (the u allows future simple `git pull`)
   * On each commit:
     * `git status`
     * `git add .`
@@ -41,7 +41,10 @@
     * and paste in app.component.spec.ts
     * and for now, live with "Unused import" warnings?
     * ng e2e works.
-    
+    * was also able to re-deploy
+  * `npm install @ngrx/core @ngrx/store --save`
+  * Noticing unmet peer dependencies. Ignoring for now.
+  
     
   
   
@@ -50,11 +53,7 @@
   
   
   * `npm install express --save` and create src/server/ folder. Still can `ng serve`.
-  * `npm install @ngrx/core @ngrx/store --save` and create src/app/shared/stateStore.ts.
 
-  * Also copy the extra declaration lines from app.module.ts to app.component.spec.ts.
-  * Add <app-top></app-top> etc. to app.component.html.
-  * Can still ng test, but now there are 6 tests, not 3 (added *SUCCESS Component: Top should create an instance*, etc.)
   * Added title to top through stateStore.static, css to top middle and bottom; no test or console errors.
   * Next: make arrow do something
   * Next: try gridster

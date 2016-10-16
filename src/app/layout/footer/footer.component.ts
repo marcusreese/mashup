@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { TOGGLE_FOOTER_SIZE } from './footer.reducer';
+
+interface AppState {
+  footerExpanded: boolean;
+}
 
 @Component({
   selector: 'app-footer',
@@ -7,7 +13,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  constructor(public store: Store<AppState>) {
+  }
+
+  toggleFooterSize() {
+    this.store.dispatch({ type: TOGGLE_FOOTER_SIZE });
+  }
 
   ngOnInit() {
   }
