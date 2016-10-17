@@ -34,23 +34,22 @@
     * `ng g component layout/header`
     * `ng g component layout/main-content`
     * `ng g component layout/footer`
-  * Copy those 3 imports from app.module.ts to app.component.ts.
   * Add new tags to app.component.html (e.g. <app-header></app-header>).
     * That breaks unit test: *'app-header' is not a known element.*
     * To fix, copy imports and declarations from app.module.ts,
-    * paste in app.component.spec.ts,
-    * and for now, live with "Unused import" warnings?
-    * `ng e2e` still works.
-    * Was also able to re-deploy.
+    * paste in app.component.spec.ts
+    * e2e okay, test okay, serve okay, console okay, deploy okay
   * `npm install @ngrx/core @ngrx/store --save`
     * Noticing unmet peer dependencies. Ignoring for now.
   * Create a footer reducer with action for toggling size.
     * `import` and `imports` in app.module.ts and app.component.spec.ts.
-    * e2e working; unit tests working except footer test.
+    * e2e working; test okay if change footer test to be like app test.
     * Footer test constructor won't work until it gets a store argument.
   * Add footer button that dispatches the TOGGLE_FOOTER_SIZE action.
     * e2e okay, test okay, serve okay, console okay
   * Have footer height respond to state change.
+    * e2e okay, test okay, serve okay, console okay, deploy okay
+  * Fix tests.
     * e2e okay, test okay, serve okay, console okay, deploy okay
     
   

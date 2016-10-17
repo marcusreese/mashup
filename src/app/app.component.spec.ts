@@ -18,7 +18,7 @@ describe('App: Mashup', () => {
         FooterComponent
       ],
       imports: [
-        StoreModule.provideStore({ footerToggle: footerReducer })
+        StoreModule.provideStore({ footerExpanded: footerReducer })
       ],
     });
   });
