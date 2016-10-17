@@ -1,6 +1,6 @@
 $btnColor: cadetblue;
 
-.clickable {
+button {
   margin: 3px;
   cursor: pointer;
   background-color: $btnColor;
@@ -14,13 +14,22 @@ $btnColor: cadetblue;
   }
   border-radius: 2px;
   box-shadow: 1px 2px 3px 0px gray;
+  padding: 2px 2px;
+  height: 2.8rem;
 }
 .footer-side {
   flex: 0 0 auto;
   font-size: 2rem;
   font-weight: bold;
-  color: lightgray;
-  padding: 0 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  button {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    color: lightgray;
+  }
 }
 .footer-main {
   flex: 1 1 auto;
@@ -30,7 +39,6 @@ $btnColor: cadetblue;
 .footer-button {
   font-size: 1.2rem;
   flex: 1 0 auto;
-  height: 2.8rem;
   font-weight: bold;
   text-align: center;
   color: white;

@@ -21,7 +21,7 @@ import { footerReducer } from './layout/footer/footer.reducer';
     BrowserModule,
     FormsModule,
     HttpModule,
-    StoreModule.provideStore({ footerToggle: footerReducer })
+    StoreModule.provideStore({ footerExpanded: footerReducer })
   ],
   providers: [],
   bootstrap: [AppComponent]

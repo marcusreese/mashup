@@ -3,6 +3,6 @@
 </h1>
 <header role="banner"><app-header></app-header></header>
 <main role="main"><app-main-content></app-main-content></main>
-<footer role="contentinfo" [ngClass]="{'expanded': false }" >
+<footer role="contentinfo" [ngClass]="{'expanded': footerExpanded | async }" >
   <app-footer></app-footer>
 </footer>

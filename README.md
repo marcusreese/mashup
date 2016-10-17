@@ -50,11 +50,12 @@
     * Footer test constructor won't work until it gets a store argument.
   * Add footer button that dispatches the TOGGLE_FOOTER_SIZE action.
     * e2e okay, test okay, serve okay, console okay
-  
+  * Have footer height respond to state change.
+    * e2e okay, test okay, serve okay, console okay, deploy okay
     
   
   
-  Soon: material design?
+  Soon: 
   Get rid of app works title etc.
 
   
@@ -67,6 +68,7 @@
   * Next: add leaflet
   * Next: add primeng table
   * Next: add form and api for getting web pages with lat and long for table and map
+  * material design?
   
 
 
