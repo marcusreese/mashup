@@ -4,9 +4,16 @@ header {
   display: flex;
 }
 main {
-  flex: 1 1 100%;
+  flex: 1 1 90%;
   display: block;
   background-color: lightgray;
+  overflow-y: auto;
+  overflox-x: hidden;
+  padding-left: 10px;
+}
+app-main-content {
+  overflow-y: auto;
+  overflox-x: hidden;
 }
 footer {
   flex: 0 0 auto;

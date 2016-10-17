@@ -49,8 +49,9 @@
     * e2e okay, test okay, serve okay, console okay
   * Have footer height respond to state change.
     * e2e okay, test okay, serve okay, console okay, deploy okay
-  * Fix tests.
-    * e2e okay, test okay, serve okay, console okay, deploy okay
+  * `npm install angular2-grid --save`
+  * Put gridster in main-content.
+    * e2e okay, test okay, serve okay, console okay
     
   
   

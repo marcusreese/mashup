@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { Store, StoreModule } from '@ngrx/store';
+import { NgGridModule } from 'angular2-grid';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './layout/header/header.component';
@@ -21,6 +22,7 @@ import { footerReducer } from './layout/footer/footer.reducer';
     BrowserModule,
     FormsModule,
     HttpModule,
+    NgGridModule,
     StoreModule.provideStore({ footerExpanded: footerReducer })
   ],
   providers: [],
