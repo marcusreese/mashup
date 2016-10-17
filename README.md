@@ -50,13 +50,12 @@
   * Have footer height respond to state change.
     * e2e okay, test okay, serve okay, console okay, deploy okay
   * `npm install angular2-grid --save`
-  * Put gridster in main-content.
+  * Put angular2-grid in main-content.
     * e2e okay, test okay, serve okay, console okay
-    
+  * Make buttons and boxes for Plugins, Map, and Table
+    * test okay, serve okay, console okay
   
-  
-  Soon: 
-  Get rid of app works title etc.
+ 
 
   
   

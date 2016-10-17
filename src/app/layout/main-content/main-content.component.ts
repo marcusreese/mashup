@@ -18,33 +18,34 @@ export class MainContentComponent implements OnInit {
   boxes = [
     {
       config: {
+        'col': 1,
+        'row': 5,
+        'sizex': 1,
+        'sizey': 1
       },
-      title: 'hello',
-      text: 'world'
+      title: 'Plugins',
+      text: `Map,\n
+      Table`
     },
     {
       config: {
+        'col': 1,
+        'row': 1,
+        'sizex': 3,
+        'sizey': 4
       },
-      title: 'hello',
-      text: 'world'
+      title: 'Map',
+      text: ''
     },
     {
       config: {
+        'col': 4,
+        'row': 1,
+        'sizex': 3,
+        'sizey': 4
       },
-      title: 'hello',
-      text: 'world'
-    },
-    {
-      config: {
-      },
-      title: 'hello',
-      text: 'world'
-    },
-    {
-      config: {
-      },
-      title: 'hello',
-      text: 'world'
+      title: 'Table',
+      text: ''
     }
   ];
   constructor() { }
