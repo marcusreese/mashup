@@ -53,9 +53,9 @@
   * Put angular2-grid in main-content.
     * e2e okay, test okay, serve okay, console okay
   * Make buttons and boxes for Plugins, Map, and Table
-    * test okay, serve okay, console okay
-  
- 
+    * test okay, serve okay, console okay, deploy okay
+  * `npm install --save leaflet`
+  * `npm install primeng --save`
 
   
   
