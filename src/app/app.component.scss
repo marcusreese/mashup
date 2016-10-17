@@ -10,10 +10,12 @@ main {
 }
 footer {
   flex: 0 0 auto;
+  &.expanded {
+    flex-basis: 50%;
+  }
+}
+app-footer {
   margin: 3px;
   display: flex;
   justify-content: space-between;
-  .expanded {
-    flex-basis: 50%;
-  }
 }

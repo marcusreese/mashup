@@ -5,7 +5,7 @@
   * Before ng2 cli, need Node.js > 4; got stable (v4.6.0) from nodejs.org
   * Before ng2 cli, need npm > 3: `npm install -g npm@latest` (3.10.8)
   * Before ng2 cli, have to install git from https://git-scm.com/download/
-  * Close command prompt and reopen for git to be in path
+  * Close command prompt and reopen for git to be in path.
   * `npm install -g angular-cli`
   * Create blank repo on github.com by
     * clicking Start a Project,
@@ -18,37 +18,44 @@
   * On each commit:
     * `git status`
     * `git add .`
-    * `git log -1` (the flag is a number--how many commit messages to see)
+    * `git log -1` (flag is a number--how many commit messages to see)
     * `git commit -m "<message here>"`
     * and eventually `git push -u origin master`
   * `ng github-pages:deploy` worked in seconds; only favicon err logged.
   * `ng serve` works; and then in other console, `ng e2e` works.
   * `ng test` works (debug, ctrl-shift-i to see test results in console)
-  * Create header main and footer tags in app.component.html
+  * Create semantic header main and footer tags in app.component.html:
     * `<header role="banner"></header>`
     * `<main role="main"></main>`
     * `<footer role="contentinfo"></footer>`
-  * Add some styles in styles.scss and app.component.scss
+  * Add some styles in styles.scss and app.component.scss.
   * Create /layout/ folder.
-  * Generate components to go in these tags
+  * Generate components (that will be nested inside the semantic tags):
     * `ng g component layout/header`
     * `ng g component layout/main-content`
     * `ng g component layout/footer`
-  * Copy imports those 3 imports from app.module.ts to app.component.ts.
-  * Add new tags to app.component.html (e.g. <app-header></app-header>)
-    * That breaks unit test: 'app-header' is not a known element.
-    * To fix, copy imports and declarations from app.module.ts
-    * and paste in app.component.spec.ts
+  * Copy those 3 imports from app.module.ts to app.component.ts.
+  * Add new tags to app.component.html (e.g. <app-header></app-header>).
+    * That breaks unit test: *'app-header' is not a known element.*
+    * To fix, copy imports and declarations from app.module.ts,
+    * paste in app.component.spec.ts,
     * and for now, live with "Unused import" warnings?
-    * ng e2e works.
-    * was also able to re-deploy
+    * `ng e2e` still works.
+    * Was also able to re-deploy.
   * `npm install @ngrx/core @ngrx/store --save`
-  * Noticing unmet peer dependencies. Ignoring for now.
+    * Noticing unmet peer dependencies. Ignoring for now.
+  * Create a footer reducer with action for toggling size.
+    * `import` and `imports` in app.module.ts and app.component.spec.ts.
+    * e2e working; unit tests working except footer test.
+    * Footer test constructor won't work until it gets a store argument.
+  * Add footer button that dispatches the TOGGLE_FOOTER_SIZE action.
+    * e2e okay, test okay, serve okay, console okay
   
     
   
   
-  
+  Soon: material design?
+  Get rid of app works title etc.
 
   
   
