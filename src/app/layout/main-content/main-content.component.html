@@ -2,7 +2,9 @@
   <div *ngFor="let box of boxes; let i = index">
     <div [(ngGridItem)]="box.config"  *ngIf="(plugins | async)[i].isBoxVisible">
       <div class="title">{{box.title}}</div>
-      <p>{{box.text}}</p>
+      <app-plugins-manager *ngIf="box.title === 'Plugins'"></app-plugins-manager>
+      <app-map *ngIf="box.title === 'Map'"></app-map>
+      <app-hlr *ngIf="box.title === 'Table'"></app-hlr>
     </div>
   </div>
 </div>

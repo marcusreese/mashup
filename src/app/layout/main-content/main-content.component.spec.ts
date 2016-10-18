@@ -6,13 +6,19 @@ import { Store, StoreModule } from '@ngrx/store';
 import { footerReducer } from '../../shared/reducers/footer';
 import { pluginsReducer } from '../../shared/reducers/plugins';
 import { NgGridModule } from 'angular2-grid';
+import { PluginsManagerComponent } from '../../plugins/plugins-manager/plugins-manager.component';
+import { MapComponent } from '../../plugins/map/map.component';
+import { HlrComponent } from '../../plugins/hlr/hlr.component';
 
 
 describe('Component: MainContent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [
-        MainContentComponent
+        MainContentComponent,
+        PluginsManagerComponent,
+        MapComponent,
+        HlrComponent
       ],
       imports: [
         NgGridModule,

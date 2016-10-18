@@ -1,7 +1,7 @@
 {
   "name": "mashup",
   "version": "0.0.0",
-  "license": "MIT",
+  "license": "",
   "angular-cli": {},
   "scripts": {
     "start": "ng serve",

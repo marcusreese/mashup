@@ -63,17 +63,15 @@
     * test okay, serve okay, console okay
   * `npm install --save ramda`
   * Get windows/boxes to appear/disappear based on isBoxVisible.
-    * test okay, serve okay, console okay
-  
+    * test okay, serve okay, console okay, deploy okay
+  * Get plugin components into main-content and change title.
+    * e2e okay, test okay, serve okay, console okay
 
   
   
   * `npm install express --save` and create src/server/ folder. Still can `ng serve`.
-
-  * Added title to top through stateStore.static, css to top middle and bottom; no test or console errors.
-  * Next: make arrow do something
-  * Next: try gridster
   * Next: add leaflet
+  * Add title to top
   * Next: add primeng table
   * Next: add form and api for getting web pages with lat and long for table and map
   * material design?

@@ -11,7 +11,7 @@ interface AppState {
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app works!';
+  title = 'Mission UI';
   footerExpanded: any; // RxJs:Observable<boolean>
 
   constructor(public store: Store<AppState>) {
