@@ -66,6 +66,8 @@
     * test okay, serve okay, console okay, deploy okay
   * Get plugin components into main-content and change title.
     * e2e okay, test okay, serve okay, console okay
+  * Fix header css etc.
+    * test okay, serve okay, console okay
 
   
   
