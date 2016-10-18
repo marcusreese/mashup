@@ -56,6 +56,11 @@
     * test okay, serve okay, console okay, deploy okay
   * `npm install --save leaflet`
   * `npm install primeng --save`
+  * `ng g component plugins/plugins-manager`
+  * `ng g component plugins/map`
+  * `ng g component plugins/hlr`
+  * Get button clicks to toggle isWindowVisible.
+  
 
   
   

@@ -12,7 +12,7 @@ interface AppState {
 })
 export class AppComponent {
   title = 'app works!';
-  footerExpanded: any;
+  footerExpanded: any; // RxJs:Observable<boolean>
 
   constructor(public store: Store<AppState>) {
     this.footerExpanded = store.select('footerExpanded');

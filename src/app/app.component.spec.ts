@@ -5,8 +5,8 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { MainContentComponent } from './layout/main-content/main-content.component';
 import { FooterComponent } from './layout/footer/footer.component';
-import { Store, StoreModule } from '@ngrx/store';
-import { footerReducer } from './layout/footer/footer.reducer';
+import { StoreModule } from '@ngrx/store';
+import { footerReducer } from './shared/reducers/footer';
 import { NgGridModule } from 'angular2-grid';
 
 

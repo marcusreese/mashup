@@ -3,7 +3,7 @@
 import { TestBed, async } from '@angular/core/testing';
 import { FooterComponent } from './footer.component';
 import { Store, StoreModule } from '@ngrx/store';
-import { footerReducer } from './footer.reducer';
+import { footerReducer } from '../../shared/reducers/footer';
 
 describe('Component: Footer', () => {
   beforeEach(() => {

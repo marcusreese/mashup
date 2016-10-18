@@ -15,6 +15,7 @@ export class MainContentComponent implements OnInit {
     min_width: 20,
     margins: [10, 10, 0, 0]
   };
+  // TODO: get rid of this so it only exists in one place: plugins.ts
   boxes = [
     {
       config: {

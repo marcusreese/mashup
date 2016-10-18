@@ -1,11 +1,11 @@
-<div class="footer-main">
-  <button class="footer-button">
+<div class="footer-main" (click)="clickInFooterMain($event)">
+  <button id="plugins-manager-btn" class="footer-button" *ngIf="true">
     Plugins
   </button>
-  <button class="footer-button">
+  <button id="map-btn" class="footer-button">
     Map
   </button>
-  <button class="footer-button">
+  <button id="hlr-btn" class="footer-button">
     Table
   </button>
 </div>

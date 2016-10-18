@@ -7,13 +7,13 @@ main {
   flex: 1 1 90%;
   display: block;
   background-color: lightgray;
-  overflow-y: auto;
-  overflox-x: hidden;
+  overflow-y: hidden;
+  overflow-x: hidden;
   padding-left: 10px;
 }
 app-main-content {
   overflow-y: auto;
-  overflox-x: hidden;
+  overflow-x: hidden;
 }
 footer {
   flex: 0 0 auto;

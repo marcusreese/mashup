@@ -9,21 +9,31 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { MainContentComponent } from './layout/main-content/main-content.component';
 import { FooterComponent } from './layout/footer/footer.component';
-import { footerReducer } from './layout/footer/footer.reducer';
+import { footerReducer } from './shared/reducers/footer';
+import { pluginsReducer } from './shared/reducers/plugins';
+import { PluginsManagerComponent } from './plugins/plugins-manager/plugins-manager.component';
+import { MapComponent } from './plugins/map/map.component';
+import { HlrComponent } from './plugins/hlr/hlr.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     MainContentComponent,
-    FooterComponent
+    FooterComponent,
+    PluginsManagerComponent,
+    MapComponent,
+    HlrComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     NgGridModule,
-    StoreModule.provideStore({ footerExpanded: footerReducer })
+    StoreModule.provideStore({
+      footerExpanded: footerReducer,
+      plugins: pluginsReducer
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
