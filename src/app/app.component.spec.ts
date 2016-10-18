@@ -7,8 +7,8 @@ import { MainContentComponent } from './layout/main-content/main-content.compone
 import { FooterComponent } from './layout/footer/footer.component';
 import { StoreModule } from '@ngrx/store';
 import { footerReducer } from './shared/reducers/footer';
+import { pluginsReducer } from './shared/reducers/plugins';
 import { NgGridModule } from 'angular2-grid';
-
 
 describe('App: Mashup', () => {
   beforeEach(() => {
@@ -21,7 +21,10 @@ describe('App: Mashup', () => {
       ],
       imports: [
         NgGridModule,
-        StoreModule.provideStore({ footerExpanded: footerReducer })
+        StoreModule.provideStore({
+          footerExpanded: footerReducer,
+          plugins: pluginsReducer
+        })
       ],
     });
   });

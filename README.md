@@ -59,7 +59,11 @@
   * `ng g component plugins/plugins-manager`
   * `ng g component plugins/map`
   * `ng g component plugins/hlr`
-  * Get button clicks to toggle isWindowVisible.
+  * Get button clicks to toggle isWindowVisible/isBoxVisible.
+    * test okay, serve okay, console okay
+  * `npm install --save ramda`
+  * Get windows/boxes to appear/disappear based on isBoxVisible.
+    * test okay, serve okay, console okay
   
 
   

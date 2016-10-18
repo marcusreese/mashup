@@ -10,13 +10,11 @@ import { TOGGLE_PLUGIN } from '../../shared/reducers/plugins';
 })
 export class FooterComponent implements OnInit {
 
-  plugins: any;
-  isOpen: any;
+  // plugins: any;
+  // isOpen: any;
   constructor(public store: Store<any>) {
-    this.plugins = store.select('plugins');
-    this.isOpen = (pluginName) => {
-      return this.plugins.reduce((cum, cur) => cum[cur.plugin]);
-    };
+    // this.plugins = store.select('plugins');
+    // this.isOpen = this.plugins.subscribe(plugins => plugins[0].isBoxVisible);
   }
 
   toggleFooterSize() {

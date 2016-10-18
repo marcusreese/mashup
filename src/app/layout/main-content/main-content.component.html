@@ -1,6 +1,8 @@
 <div [ngGrid]="gridOptions">
-  <div *ngFor="let box of boxes" [(ngGridItem)]="box.config">
-    <div class="title">{{box.title}}</div>
-    <p>{{box.text}}</p>
+  <div *ngFor="let box of boxes; let i = index">
+    <div [(ngGridItem)]="box.config"  *ngIf="(plugins | async)[i].isBoxVisible">
+      <div class="title">{{box.title}}</div>
+      <p>{{box.text}}</p>
+    </div>
   </div>
 </div>
