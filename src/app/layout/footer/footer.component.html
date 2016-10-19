@@ -1,12 +1,6 @@
 <div class="footer-main" (click)="clickInFooterMain($event)">
-  <button id="plugins-manager-btn" class="footer-button">
-    Plugins
-  </button>
-  <button id="map-btn" class="footer-button">
-    Map
-  </button>
-  <button id="hlr-btn" class="footer-button">
-    Table
+  <button *ngFor="let plugin of (plugins | async)" id="{{plugin.pluginComponentName}}-btn" class="footer-button">
+    {{plugin.pluginTitle}}
   </button>
 </div>
 <div class="footer-side" (click)="toggleFooterSize()">

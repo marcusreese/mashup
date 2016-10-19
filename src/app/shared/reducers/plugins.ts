@@ -1,4 +1,5 @@
 import { ActionReducer, Action } from '@ngrx/store';
+import * as R from 'ramda';
 
 export const ADD_PLUGIN = 'ADD_PLUGIN';
 export const TOGGLE_PLUGIN = 'TOGGLE_PLUGIN';
@@ -7,6 +8,7 @@ const initialConfig = [
   {
     pluginTitle: 'Plugins',
     pluginComponentName: 'plugins-manager',
+    dragHandle: '.title', // not working yet
     isBoxVisible: false,
     config: {
       'col': 1,
@@ -18,6 +20,7 @@ const initialConfig = [
   {
     pluginTitle: 'Map',
     pluginComponentName: 'map',
+    dragHandle: '.title', // not working yet
     isBoxVisible: true,
     config: {
       'col': 1,
@@ -29,6 +32,7 @@ const initialConfig = [
   {
     pluginTitle: 'HLR',
     pluginComponentName: 'hlr',
+    dragHandle: '.title', // not working yet
     isBoxVisible: true,
     config: {
       'col': 4,
@@ -42,18 +46,23 @@ const initialConfig = [
 export const pluginsReducer: ActionReducer<Array<any>> = (state: any = initialConfig, action: Action) => {
   switch (action.type) {
     case TOGGLE_PLUGIN:
-      let newState = state.map((obj) => {
-        if (obj && obj.pluginComponentName === action.payload.pluginComponentName) {
-          action.payload.isBoxVisible = !obj.isBoxVisible;
-          return action.payload;
-        } else {
-          return obj;
-        }
-      });
-      return newState;
+      const rightPluginName = R.eqProps('pluginComponentName', action.payload);
+      const toggleIsBoxVisible = R.evolve({ isBoxVisible: R.not });
+      const toggleIfClicked = R.when(rightPluginName, toggleIsBoxVisible);
+      const findAndToggleClicked = R.map(toggleIfClicked);
+      return findAndToggleClicked(state);
     case ADD_PLUGIN:
       return state.concat([action.payload]);
     default:
       return state;
   }
 };
+
+
+
+// let newState = state.map((obj) => {
+// if (obj && obj.pluginComponentName === action.payload.pluginComponentName) {
+//
+//   obj.isBoxVisible = !obj.isBoxVisible;
+// ;
+// }

@@ -16,40 +16,7 @@ export class MainContentComponent implements OnInit {
     min_width: 20,
     margins: [10, 10, 0, 0]
   };
-  // TODO: get rid of this so it only exists in one place: plugins.ts
-  boxes = [
-    {
-      config: {
-        'col': 1,
-        'row': 5,
-        'sizex': 1,
-        'sizey': 1
-      },
-      title: 'Plugins',
-      text: `Map,\n
-      Table`
-    },
-    {
-      config: {
-        'col': 1,
-        'row': 1,
-        'sizex': 3,
-        'sizey': 4
-      },
-      title: 'Map',
-      text: ''
-    },
-    {
-      config: {
-        'col': 4,
-        'row': 1,
-        'sizex': 3,
-        'sizey': 4
-      },
-      title: 'Table',
-      text: ''
-    }
-  ];
+
   plugins: any;
   constructor(public store: Store<any>) {
     this.plugins = store.select('plugins');

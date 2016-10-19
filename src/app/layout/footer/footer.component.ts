@@ -11,32 +11,21 @@ import { TOGGLE_PLUGIN } from '../../shared/reducers/plugins';
 export class FooterComponent implements OnInit {
 
   // TODO: Buttons should say "Show Plugins", "Hide Map" etc.
-  // plugins: any;
-  // isOpen: any;
+  plugins: any;
   constructor(public store: Store<any>) {
-    // this.plugins = store.select('plugins');
-    // this.isOpen = this.plugins.subscribe(plugins => plugins[0].isBoxVisible);
+    this.plugins = store.select('plugins');
   }
 
   toggleFooterSize() {
     this.store.dispatch({ type: TOGGLE_FOOTER_SIZE });
   }
 
-  // TODO: get rid of config stuff so it only exists in one place: plugins.ts (it doesn't work here anyway)
   clickInFooterMain(event) {
     const lowercaseName = event.target.id.replace(/-btn/, '');
-    const title = lowercaseName[0].toUpperCase() + lowercaseName.slice(1);
     this.store.dispatch({
       type: TOGGLE_PLUGIN,
       payload: {
-        pluginTitle: title,
         pluginComponentName: lowercaseName,
-        config: {
-          'col': 1,
-          'row': 1,
-          'sizex': 3,
-          'sizey': 2
-        }
       }
     });
   }
