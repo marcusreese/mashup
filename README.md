@@ -68,6 +68,14 @@
     * e2e okay, test okay, serve okay, console okay
   * Fix header css etc.
     * test okay, serve okay, console okay
+  * Try to add primeng but fail.
+    * `git stash -u`
+    * `git checkout -b primengAttempt`
+    * `git stash pop`
+    * `git add .`
+    * `git commit -m "Effort to use primeng"`
+    * `git push origin primengAttempt` (for backup)
+    * `git checkout master`
 
   
   

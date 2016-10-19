@@ -12,6 +12,7 @@ import { NgGridModule } from 'angular2-grid';
 import { PluginsManagerComponent } from './plugins/plugins-manager/plugins-manager.component';
 import { MapComponent } from './plugins/map/map.component';
 import { HlrComponent } from './plugins/hlr/hlr.component';
+import { DataTableModule, SharedModule } from 'primeng/primeng';
 
 describe('App: Mashup', () => {
   beforeEach(() => {
@@ -27,6 +28,8 @@ describe('App: Mashup', () => {
       ],
       imports: [
         NgGridModule,
+        DataTableModule,
+        SharedModule,
         StoreModule.provideStore({
           footerExpanded: footerReducer,
           plugins: pluginsReducer

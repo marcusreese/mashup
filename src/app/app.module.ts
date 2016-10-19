@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { Store, StoreModule } from '@ngrx/store';
 import { NgGridModule } from 'angular2-grid';
+import { DataTableModule, SharedModule } from 'primeng/primeng';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './layout/header/header.component';
@@ -30,6 +31,8 @@ import { HlrComponent } from './plugins/hlr/hlr.component';
     FormsModule,
     HttpModule,
     NgGridModule,
+    DataTableModule,
+    SharedModule,
     StoreModule.provideStore({
       footerExpanded: footerReducer,
       plugins: pluginsReducer
