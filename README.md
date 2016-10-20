@@ -79,10 +79,16 @@
   * Clean up boxes/plugins
     * `npm install --save @types/ramda`
     * test okay, serve okay, console okay
-  *
+    * tried referencing script in angular-cli.json,
+      * nice in console,
+      * worked in code with no import, but
+      * gave ugly *cannot find name* errors, so left out for now.
+      * as workaround, use console on ramda's website.
+  * `npm install express --save`
+  * `npm install request --save`
   
   
-  * `npm install express --save` and create src/server/ folder. Still can `ng serve`.
+  *  and create src/server/ folder. Still can `ng serve`.
   * Next: add leaflet
   * Add title to top
   * Next: add primeng table
