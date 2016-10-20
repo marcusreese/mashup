@@ -1,5 +1,12 @@
 # Mashup
 
+## How to get code and contribute
+  * In console, `git clone https://github.com/marcusreese/mashup.git`
+  * `npm install`
+  * `ng serve`
+  * In second console, `ng test`
+  * In third console, `git status` etc.
+
 ## How this is created using Windows 10 etc.
 
   * Before ng2 cli, need Node.js > 4; got stable (v4.6.0) from nodejs.org
@@ -9,7 +16,7 @@
   * `npm install -g angular-cli`
   * Create blank repo on github.com by
     * clicking Start a Project,
-    * adding a name *mashup* (note SIMPLE name for deploy), and 
+    * adding a name *mashup* (note SIMPLE name for deploy), and
     * clicking Create Repository.
   * `ng new mashup --style=scss` (note: same name as repo for deploy)
   * `cd mashup`
@@ -86,15 +93,15 @@
       * as workaround, use console on ramda's website.
   * `npm install express --save`
   * `npm install request --save`
+  * Create ip addr input and add/x button.
+
   
-  
+
   *  and create src/server/ folder. Still can `ng serve`.
   * Next: add leaflet
-  * Add title to top
-  * Next: add primeng table
   * Next: add form and api for getting web pages with lat and long for table and map
   * material design?
-  
+
 
 
 
@@ -117,7 +124,7 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 ## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/). 
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 Before running the tests make sure you are serving the app via `ng serve`.
 
 ## Deploying to Github Pages

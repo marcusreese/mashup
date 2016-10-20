@@ -9,12 +9,12 @@ const initialConfig = [
     pluginTitle: 'Plugins',
     pluginComponentName: 'plugins-manager',
     dragHandle: '.title', // not working yet
-    isBoxVisible: false,
+    isBoxVisible: true,
     config: {
       'col': 1,
-      'row': 5,
-      'sizex': 1,
-      'sizey': 1
+      'row': 1,
+      'sizex': 3,
+      'sizey': 3
     }
   },
   {
@@ -25,8 +25,8 @@ const initialConfig = [
     config: {
       'col': 1,
       'row': 1,
-      'sizex': 3,
-      'sizey': 4
+      'sizex': 5,
+      'sizey': 2
     }
   },
   {
@@ -38,7 +38,7 @@ const initialConfig = [
       'col': 4,
       'row': 1,
       'sizex': 3,
-      'sizey': 4
+      'sizey': 2
     }
   }
 ];
