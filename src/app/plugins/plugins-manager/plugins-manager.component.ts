@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-plugins-manager',
@@ -6,19 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./plugins-manager.component.scss']
 })
 export class PluginsManagerComponent implements OnInit {
-  model = {
-    ip: '12.3.4.5'
-  }
-  submitted = false;
-  onSubmit(event) {
-    event.preventDefault();
-    this.submitted = true;
-  }
-  btnClick($event) {
-    $event.preventDefault();
-  }
 
-  constructor() { }
+  plugins: any;
+  constructor(public store: Store<any>) {
+    this.plugins = store.select('plugins');
+  }
 
   ngOnInit() {
   }

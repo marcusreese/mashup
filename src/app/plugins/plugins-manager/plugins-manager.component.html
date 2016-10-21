@@ -1,19 +1,6 @@
-<form (ngSubmit)="onSubmit($event)" #heroForm="ngForm">
-  <div class="form-group">
-    <label for="ip">IP:</label>
-    <input type="text" class="form-control" id="ip"
-           required
-           [(ngModel)]="model.ip" name="ip"
-           #ip="ngModel" >
-    <div [hidden]="ip.valid || ip.pristine || true"
-         class="alert alert-danger">
-      IP Address is required
-    </div>
-  </div>
-  <button
-    class="{{ip.pristine ? 'done' : 'in-progress'}}"
-    disabled="{{ip.valid ? '' : 'disabled'}}"
-    (click)="btnClick($event)">
-      {{ip.pristine ? '&#10008;' : '&#10004;'}}
-  </button>
-</form>
+<app-plugin-form
+  *ngFor="let plugin of (plugins | async)"
+  [plugin]="plugin">
+</app-plugin-form>
+<app-plugin-form [plugin]="{ url: '', showForm: true }">
+</app-plugin-form>

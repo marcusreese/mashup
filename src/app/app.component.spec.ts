@@ -12,6 +12,7 @@ import { NgGridModule } from 'angular2-grid';
 import { PluginsManagerComponent } from './plugins/plugins-manager/plugins-manager.component';
 import { MapComponent } from './plugins/map/map.component';
 import { HlrComponent } from './plugins/hlr/hlr.component';
+import { PluginFormComponent } from './plugins/plugins-manager/plugin-form/plugin-form.component';
 
 describe('App: Mashup', () => {
   beforeEach(() => {
@@ -23,7 +24,8 @@ describe('App: Mashup', () => {
         FooterComponent,
         PluginsManagerComponent,
         MapComponent,
-        HlrComponent
+        HlrComponent,
+        PluginFormComponent
       ],
       imports: [
         NgGridModule,

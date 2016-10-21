@@ -1,0 +1,22 @@
+<form
+  (ngSubmit)="onSubmit($event)"
+  #heroForm="ngForm"
+  *ngIf="plugin.showForm">
+  <div class="form-group">
+    <label for="url">URL:</label>
+    <input type="text" class="form-control" id="url"
+           required
+           [(ngModel)]="plugin.url" name="url"
+           #url="ngModel" >
+    <div [hidden]="url.valid || url.pristine || true"
+         class="alert-danger">
+      URL is required
+    </div>
+  </div>
+  <button
+    class="{{url.pristine ? 'done' : 'in-progress'}}"
+    disabled="{{url.valid ? '' : 'disabled'}}"
+    (click)="btnClick($event)">
+      {{url.pristine ? '&#10008;' : '&#10004;'}}
+  </button>
+</form>

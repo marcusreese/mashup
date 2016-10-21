@@ -29,7 +29,6 @@ describe('Component: MainContent', () => {
       ],
     });
   });
-  // new FooterComponent now needs a state argument.
   it('should create an instance', () => {
     let fixture = TestBed.createComponent(MainContentComponent);
     let component = fixture.debugElement.componentInstance;

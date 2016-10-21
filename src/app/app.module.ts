@@ -14,6 +14,7 @@ import { pluginsReducer } from './shared/reducers/plugins';
 import { PluginsManagerComponent } from './plugins/plugins-manager/plugins-manager.component';
 import { MapComponent } from './plugins/map/map.component';
 import { HlrComponent } from './plugins/hlr/hlr.component';
+import { PluginFormComponent } from './plugins/plugins-manager/plugin-form/plugin-form.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HlrComponent } from './plugins/hlr/hlr.component';
     FooterComponent,
     PluginsManagerComponent,
     MapComponent,
-    HlrComponent
+    HlrComponent,
+    PluginFormComponent
   ],
   imports: [
     BrowserModule,
