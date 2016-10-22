@@ -94,10 +94,15 @@
   * `npm install express --save`
   * `npm install request --save`
   * Create ip addr input and add/x button.
+    * Some tests broken.
+  * Add plugin-form component; fix some tests.
+    * Just noticed angular2-grid behavior is broken.
+      * After any resize; height always snaps to 1.
+      * No longer floating up after drag.
+  * Fix some css on plugin-form. Windowing still buggy.
+  * Create new plugin on submit.
 
-  
-
-  *  and create src/server/ folder. Still can `ng serve`.
+  *  and create src/server/ folder.
   * Next: add leaflet
   * Next: add form and api for getting web pages with lat and long for table and map
   * material design?

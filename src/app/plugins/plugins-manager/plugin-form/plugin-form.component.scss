@@ -2,12 +2,19 @@
 form {
   display: flex;
   justify-content: center;
-  padding: 20px;
+  padding: 10px;
 }
 .form-group {
-  padding: 5px;
+  flex: 1 1 auto;
+  display: flex;
+}
+label {
+  flex: 0 1 auto;
+  text-align: center;
+  padding-top: 5px;
 }
 input {
+  flex: 1 1 auto;
   margin: 0 10px;
 }
 button {
