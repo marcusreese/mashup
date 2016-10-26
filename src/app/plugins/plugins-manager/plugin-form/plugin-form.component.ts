@@ -1,4 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
+//import { FormBuilder, Validators } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { ADD_PLUGIN } from '../../../shared/reducers/plugins';
 
 @Component({
   selector: 'app-plugin-form',
@@ -6,22 +9,32 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./plugin-form.component.scss']
 })
 export class PluginFormComponent implements OnInit {
-  // plugin = {
-  //   ip: '12.3.4.5'
-  // }
+
   @Input()
   plugin: any;
 
   submitted = false;
-  onSubmit(event) {
-    event.preventDefault();
-    this.submitted = true;
-  }
-  btnClick($event) {
-    $event.preventDefault();
+  // onSubmit(event) {
+  //   event.preventDefault();
+  //   console.log('form submit');
+  // }
+  plugins: any;
+  constructor(public store: Store<any>) {
+    this.plugins = store.select('plugins');
   }
 
-  constructor() { }
+  pluginFormAccept($event) {
+    $event.preventDefault();
+    this.submitted = true;
+    this.store.dispatch({
+      type: ADD_PLUGIN,
+      payload: {
+        pluginTitle: 'Hello World',
+        pluginName: 'hello-world'
+      }
+    });
+
+  }
 
   ngOnInit() {
   }

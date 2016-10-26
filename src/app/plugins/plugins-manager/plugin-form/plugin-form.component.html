@@ -16,7 +16,7 @@
   <button
     class="{{url.pristine ? 'done' : 'in-progress'}}"
     disabled="{{url.valid ? '' : 'disabled'}}"
-    (click)="btnClick($event)">
+    (click)="pluginFormAccept($event)">
       {{url.pristine ? '&#10008;' : '&#10004;'}}
   </button>
 </form>

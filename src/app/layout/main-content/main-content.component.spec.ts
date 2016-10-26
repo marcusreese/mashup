@@ -10,7 +10,6 @@ import { PluginsManagerComponent } from '../../plugins/plugins-manager/plugins-m
 import { MapComponent } from '../../plugins/map/map.component';
 import { HlrComponent } from '../../plugins/hlr/hlr.component';
 
-
 describe('Component: MainContent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({

@@ -8,14 +8,29 @@ import { Store } from '@ngrx/store';
 })
 export class MainContentComponent implements OnInit {
   gridOptions = {
-    limit_to_screen: true,
+    // limit_to_screen: true,
     visible_rows: 6,
     visible_cols: 6,
     max_cols: 6,
     auto_resize: true,
     min_width: 20,
-    margins: [10, 10, 0, 0]
+    margins: [10, 10, 0, 0],
+    prefer_new: true
   };
+
+  sampleItemConfigA = {
+    'row': 1,
+    'col': 1,
+    'sizex': 2,
+    'sizey': 2
+  }
+
+    sampleItemConfigB = {
+      'row': 1,
+      'col': 4,
+      'sizex': 2,
+      'sizey': 2
+    }
 
   plugins: any;
   constructor(public store: Store<any>) {

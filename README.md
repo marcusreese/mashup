@@ -100,7 +100,14 @@
       * After any resize; height always snaps to 1.
       * No longer floating up after drag.
   * Fix some css on plugin-form. Windowing still buggy.
-  * Create new plugin on submit.
+  * Create new plugin on submit. It adds button.
+    * Make footer button-click show/hide box.
+    * Add new stuff top left.
+    * Tests still failing.
+    * Box resize still buggy.
+    * serve and console okay.
+  * Next: make form better
+
 
   *  and create src/server/ folder.
   * Next: add leaflet

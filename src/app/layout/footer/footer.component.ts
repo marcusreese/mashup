@@ -25,7 +25,7 @@ export class FooterComponent implements OnInit {
     this.store.dispatch({
       type: TOGGLE_PLUGIN,
       payload: {
-        pluginComponentName: lowercaseName,
+        pluginName: lowercaseName,
       }
     });
   }

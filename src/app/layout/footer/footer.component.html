@@ -1,5 +1,5 @@
 <div class="footer-main" (click)="clickInFooterMain($event)">
-  <button *ngFor="let plugin of (plugins | async)" id="{{plugin.pluginComponentName}}-btn" class="footer-button">
+  <button *ngFor="let plugin of (plugins | async)" id="{{plugin.pluginName}}-btn" class="footer-button">
     {{plugin.pluginTitle}}
   </button>
 </div>

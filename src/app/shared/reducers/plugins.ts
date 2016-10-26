@@ -7,37 +7,37 @@ export const TOGGLE_PLUGIN = 'TOGGLE_PLUGIN';
 const initialConfig = [
   {
     pluginTitle: 'Plugins',
-    pluginComponentName: 'plugins-manager',
-    dragHandle: '.title', // not working yet
-    isBoxVisible: true,
+    pluginName: 'plugins-manager',
+    // dragHandle: '.title', // not working yet
+    isBoxVisible: false,
     config: {
       'col': 1,
       'row': 1,
       'sizex': 3,
-      'sizey': 3
+      'sizey': 1
     }
   },
   {
     pluginTitle: 'Map',
-    pluginComponentName: 'map',
-    dragHandle: '.title', // not working yet
+    pluginName: 'map',
+    // dragHandle: '.title', // not working yet
     isBoxVisible: true,
     config: {
       'col': 1,
       'row': 1,
-      'sizex': 5,
+      'sizex': 6,
       'sizey': 2
     }
   },
   {
     pluginTitle: 'HLR',
-    pluginComponentName: 'hlr',
-    dragHandle: '.title', // not working yet
+    pluginName: 'hlr',
+    // dragHandle: '.title', // not working yet
     isBoxVisible: true,
     config: {
-      'col': 4,
+      'col': 1,
       'row': 1,
-      'sizex': 3,
+      'sizex': 2,
       'sizey': 2
     }
   }
@@ -46,23 +46,23 @@ const initialConfig = [
 export const pluginsReducer: ActionReducer<Array<any>> = (state: any = initialConfig, action: Action) => {
   switch (action.type) {
     case TOGGLE_PLUGIN:
-      const rightPluginName = R.eqProps('pluginComponentName', action.payload);
+      const rightPluginName = R.eqProps('pluginName', action.payload);
       const toggleIsBoxVisible = R.evolve({ isBoxVisible: R.not });
       const toggleIfClicked = R.when(rightPluginName, toggleIsBoxVisible);
       const findAndToggleClicked = R.map(toggleIfClicked);
       return findAndToggleClicked(state);
     case ADD_PLUGIN:
-      return state.concat([action.payload]);
+      const addToStarter = R.merge({
+        isBoxVisible: true,
+        config: {
+          'col': 1,
+          'row': 1,
+          'sizex': 2,
+          'sizey': 1
+        }
+      });
+      return R.concat([addToStarter(action.payload)], state);
     default:
       return state;
   }
 };
-
-
-
-// let newState = state.map((obj) => {
-// if (obj && obj.pluginComponentName === action.payload.pluginComponentName) {
-//
-//   obj.isBoxVisible = !obj.isBoxVisible;
-// ;
-// }

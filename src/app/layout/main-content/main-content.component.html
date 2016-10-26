@@ -1,10 +1,18 @@
 <div [ngGrid]="gridOptions">
-  <div *ngFor="let plugin of (plugins | async); let i = index">
-    <div [(ngGridItem)]="plugin.config"  *ngIf="plugin.isBoxVisible">
-      <div class="title">{{plugin.pluginTitle}}</div>
-      <app-plugins-manager *ngIf="plugin.pluginTitle === 'Plugins'"></app-plugins-manager>
-      <app-map *ngIf="plugin.pluginTitle === 'Map'"></app-map>
-      <app-hlr *ngIf="plugin.pluginTitle === 'HLR'"></app-hlr>
-    </div>
+  <div *ngFor="let plugin of (plugins | async); let i = index"
+    [(ngGridItem)]="plugin.config"
+    [hidden]="!plugin.isBoxVisible">
+    <div class="title">{{plugin.pluginTitle}}</div>
+    <app-plugins-manager *ngIf="plugin.pluginTitle === 'Plugins'"></app-plugins-manager>
+    <app-map *ngIf="plugin.pluginTitle === 'Map'"></app-map>
+    <app-hlr *ngIf="plugin.pluginTitle === 'HLR'"></app-hlr>
   </div>
+  <!-- <div
+    [(ngGridItem)]="sampleItemConfigA">
+    <div class="title">Sample A</div>
+  </div>
+  <div
+    [(ngGridItem)]="sampleItemConfigB">
+    <div class="title">Sample B</div>
+  </div> -->
 </div>
