@@ -8,8 +8,17 @@
   .title {
     background-color: cadetblue;
     padding: 6px 10px 5px;
+    z-index: 5;
+    position: relative;
+    //top: 27px;
   }
 }
 ng-grid-placeholder {
   background-color: silver;
+}
+app-map {
+  // Check these
+    overflow: hidden;
+    height: 56px;
+    z-index: 0;
 }

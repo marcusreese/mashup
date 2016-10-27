@@ -111,7 +111,12 @@
     * Form now has select and x but not functional
     * test okay(!), serve okay, console okay
     * Box resize still buggy
+  * Insert first iframe (map)
+    * test okay, serve okay, console okay
 
+  * Next: generate iframe widget from form data
+
+  * Next: use Node.js as proxy for iframe
 
 
   *  and create src/server/ folder.
