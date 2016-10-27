@@ -2,14 +2,19 @@
   <div *ngFor="let plugin of (plugins | async); let i = index"
     [(ngGridItem)]="plugin.config"
     [hidden]="!plugin.isBoxVisible">
-    <div class="title">{{plugin.pluginTitle}}</div>
-    <div class="box-contents">
-      <app-plugins-manager *ngIf="plugin.pluginTitle === 'Plugins'"></app-plugins-manager>
-      <app-map *ngIf="plugin.pluginTitle === 'Map'"></app-map>
-      <app-hlr *ngIf="plugin.pluginTitle === 'HLR'"></app-hlr>
+    <div class="flex-wrapper">
+      <div class="title">{{plugin.pluginTitle}}</div>
+      <div class="box-contents">
+        <app-plugins-manager *ngIf="plugin.pluginName === 'plugins-manager'"></app-plugins-manager>
+        <app-map *ngIf="plugin.pluginName === 'map'"></app-map>
+        <app-hlr *ngIf="plugin.pluginName === 'hlr'"></app-hlr>
+        <app-frame *ngIf="plugin.pluginType === 'url'"></app-frame>
+      </div>
     </div>
   </div>
   <!-- <div
+
+
     [(ngGridItem)]="sampleItemConfigA">
     <div class="title">Sample A</div>
   </div>

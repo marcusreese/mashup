@@ -30,7 +30,7 @@ const initialConfig = [
     }
   },
   {
-    pluginTitle: 'Plugins',
+    pluginTitle: 'Components',
     pluginName: 'plugins-manager',
     // dragHandle: '.title', // not working yet
     isBoxVisible: true,

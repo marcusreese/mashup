@@ -115,7 +115,9 @@
     * test okay, serve okay, console okay
   * Correct grid-item scrolling
     * test okay, serve okay, console okay
-    
+  * Create app-frame component
+    * test okay, serve okay, console okay
+
 
   * Next: generate iframe widget from form data
 
@@ -128,7 +130,24 @@
   * material design?
 
 
+## Documentation of concept decisions
 
+if url, frame? yes, because url is generic, dangerous
+if bsr, may be able to do ng2 component
+an aggregate app uses all urls, not just one
+bsrs etc may serve as aggregate (e.g. mapping)
+both front and proxy need plugin architecture
+aggregate plugins have front and proxy sides
+aggregate plugins have apis
+  e.g.,
+    here's how you tell me your rf state (or lat-long)
+    here's how I tell you your rf needs to toggle
+adapter plugins join e.g. bsr to map or bsr to rf
+i.e. it joins a source app to an aggregate app/plugin
+adapter plugins can be front or (usually) proxy
+
+
+## Stuff from ng2 is below
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.17.
 

@@ -15,6 +15,7 @@ import { PluginsManagerComponent } from './plugins/plugins-manager/plugins-manag
 import { MapComponent } from './plugins/map/map.component';
 import { HlrComponent } from './plugins/hlr/hlr.component';
 import { PluginFormComponent } from './plugins/plugins-manager/plugin-form/plugin-form.component';
+import { FrameComponent } from './plugins/frame/frame.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { PluginFormComponent } from './plugins/plugins-manager/plugin-form/plugi
     PluginsManagerComponent,
     MapComponent,
     HlrComponent,
-    PluginFormComponent
+    PluginFormComponent,
+    FrameComponent
   ],
   imports: [
     BrowserModule,
