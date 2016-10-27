@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-//import { FormBuilder, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { ADD_PLUGIN } from '../../../shared/reducers/plugins';
 

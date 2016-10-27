@@ -3,31 +3,62 @@ form {
   display: flex;
   justify-content: center;
   padding: 10px;
+  background-color: white;
+  border-radius: 2px;
+  margin: 5px 5px 0 5px;
+  &.done {
+    opacity: .5;
+  }
 }
-.form-group {
+.form-group  {
   flex: 1 1 auto;
   display: flex;
+  flex-direction: column;
 }
-label {
-  flex: 0 1 auto;
-  text-align: center;
-  padding-top: 5px;
+select {
+  flex: 1 1 auto;
 }
 input {
   flex: 1 1 auto;
-  margin: 0 10px;
+  margin-top: 10px;
+}
+.form-column {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
 }
 button {
   border-radius: 1em;
-  color: white;
   padding: 7px;
   height: 28px;
-  &.in-progress {
-    background: limegreen;
+  background: white;
+  &.x-to-close {
+    color: lightgray;
+    position: relative;
+    bottom: 10px;
+    left: 10px;
+    &:hover {
+      color: red;
+    }
   }
-  &.done {
-    background: none;
-    color: silver;
+  &.submitter {
+    background: cadetblue;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 3px 8px 0px 6px;
+    box-shadow: 1px 2px 3px 0px gray;
+  }
+  &:hover {
+    box-shadow: 2px 3px 3px 1px gray;
+    position: relative;
+    bottom: 1px;
+    right: 1px;
+  }
+  &:active {
+    box-shadow: none;
+    outline: none;
   }
   &[disabled] {
     background: darkgray;

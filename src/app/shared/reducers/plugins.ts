@@ -6,25 +6,13 @@ export const TOGGLE_PLUGIN = 'TOGGLE_PLUGIN';
 
 const initialConfig = [
   {
-    pluginTitle: 'Plugins',
-    pluginName: 'plugins-manager',
-    // dragHandle: '.title', // not working yet
-    isBoxVisible: false,
-    config: {
-      'col': 1,
-      'row': 1,
-      'sizex': 3,
-      'sizey': 1
-    }
-  },
-  {
     pluginTitle: 'Map',
     pluginName: 'map',
     // dragHandle: '.title', // not working yet
     isBoxVisible: true,
     config: {
+      'row': 3,
       'col': 1,
-      'row': 1,
       'sizex': 6,
       'sizey': 2
     }
@@ -35,9 +23,21 @@ const initialConfig = [
     // dragHandle: '.title', // not working yet
     isBoxVisible: true,
     config: {
+      'row': 1,
+      'col': 4,
+      'sizex': 2,
+      'sizey': 2
+    }
+  },
+  {
+    pluginTitle: 'Plugins',
+    pluginName: 'plugins-manager',
+    // dragHandle: '.title', // not working yet
+    isBoxVisible: true,
+    config: {
       'col': 1,
       'row': 1,
-      'sizex': 2,
+      'sizex': 3,
       'sizey': 2
     }
   }

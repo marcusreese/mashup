@@ -1,6 +1,7 @@
 <app-plugin-form
+  [plugin]="{ pluginTitle: '', formState: 'in-progress' }">
+</app-plugin-form>
+<app-plugin-form
   *ngFor="let plugin of (plugins | async)"
   [plugin]="plugin">
-</app-plugin-form>
-<app-plugin-form [plugin]="{ url: '', showForm: true }">
 </app-plugin-form>

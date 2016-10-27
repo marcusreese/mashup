@@ -9,6 +9,7 @@ import { NgGridModule } from 'angular2-grid';
 import { PluginsManagerComponent } from '../../plugins/plugins-manager/plugins-manager.component';
 import { MapComponent } from '../../plugins/map/map.component';
 import { HlrComponent } from '../../plugins/hlr/hlr.component';
+import { PluginFormComponent } from '../../plugins/plugins-manager/plugin-form/plugin-form.component';
 
 describe('Component: MainContent', () => {
   beforeEach(() => {
@@ -17,7 +18,8 @@ describe('Component: MainContent', () => {
         MainContentComponent,
         PluginsManagerComponent,
         MapComponent,
-        HlrComponent
+        HlrComponent,
+        PluginFormComponent
       ],
       imports: [
         NgGridModule,

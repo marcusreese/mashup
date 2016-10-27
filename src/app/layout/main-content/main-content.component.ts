@@ -18,19 +18,19 @@ export class MainContentComponent implements OnInit {
     prefer_new: true
   };
 
-  sampleItemConfigA = {
-    'row': 1,
-    'col': 1,
-    'sizex': 2,
-    'sizey': 2
-  }
-
-    sampleItemConfigB = {
-      'row': 1,
-      'col': 4,
-      'sizex': 2,
-      'sizey': 2
-    }
+  // sampleItemConfigA = {
+  //   'row': 1,
+  //   'col': 1,
+  //   'sizex': 2,
+  //   'sizey': 2
+  // };
+  //
+  // sampleItemConfigB = {
+  //   'row': 1,
+  //   'col': 4,
+  //   'sizex': 2,
+  //   'sizey': 2
+  // };
 
   plugins: any;
   constructor(public store: Store<any>) {

@@ -16,9 +16,10 @@ app-main-content {
   overflow-x: hidden;
 }
 footer {
-  flex: 0 0 auto;
+  height: 51px;
   &.expanded {
-    flex-basis: 50%;
+    height: auto;
+    flex: 0 0 auto;
   }
 }
 app-footer {

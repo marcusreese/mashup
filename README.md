@@ -106,7 +106,12 @@
     * Tests still failing.
     * Box resize still buggy.
     * serve and console okay.
-  * Next: make form better
+  * Improve forms, footer, and tests
+    * Can handle many buttons
+    * Form now has select and x but not functional
+    * test okay(!), serve okay, console okay
+    * Box resize still buggy
+
 
 
   *  and create src/server/ folder.

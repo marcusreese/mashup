@@ -1,22 +1,29 @@
 <form
-  (ngSubmit)="onSubmit($event)"
-  #heroForm="ngForm"
-  *ngIf="plugin.showForm">
+  [class]="plugin.formState || 'done'">
   <div class="form-group">
-    <label for="url">URL:</label>
-    <input type="text" class="form-control" id="url"
+    <select>
+      <option></option>
+      <option>Active BSRs</option>
+      <option>URL</option>
+      <option>HLR</option>
+      <option>Map</option>
+    </select>
+    <input type="text"
            required
-           [(ngModel)]="plugin.url" name="url"
-           #url="ngModel" >
-    <div [hidden]="url.valid || url.pristine || true"
-         class="alert-danger">
-      URL is required
-    </div>
+           placeholder="URL + Title"
+           [value]="plugin.pluginTitle"
+           name="textInput">
   </div>
-  <button
-    class="{{url.pristine ? 'done' : 'in-progress'}}"
-    disabled="{{url.valid ? '' : 'disabled'}}"
-    (click)="pluginFormAccept($event)">
-      {{url.pristine ? '&#10008;' : '&#10004;'}}
-  </button>
+  <div class="form-column">
+    <button
+      class="x-to-close"
+      (click)="removePlugin(this)">
+        ✖
+    </button>
+    <button
+      class="submitter"
+      (click)="pluginFormAccept($event)">
+      ✓
+    </button>
+  </div>
 </form>
