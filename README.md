@@ -113,6 +113,9 @@
     * Box resize still buggy
   * Insert first iframe (map)
     * test okay, serve okay, console okay
+  * Correct grid-item scrolling
+    * test okay, serve okay, console okay
+    
 
   * Next: generate iframe widget from form data
 

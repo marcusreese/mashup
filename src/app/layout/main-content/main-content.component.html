@@ -3,9 +3,11 @@
     [(ngGridItem)]="plugin.config"
     [hidden]="!plugin.isBoxVisible">
     <div class="title">{{plugin.pluginTitle}}</div>
-    <app-plugins-manager *ngIf="plugin.pluginTitle === 'Plugins'"></app-plugins-manager>
-    <app-map *ngIf="plugin.pluginTitle === 'Map'"></app-map>
-    <app-hlr *ngIf="plugin.pluginTitle === 'HLR'"></app-hlr>
+    <div class="box-contents">
+      <app-plugins-manager *ngIf="plugin.pluginTitle === 'Plugins'"></app-plugins-manager>
+      <app-map *ngIf="plugin.pluginTitle === 'Map'"></app-map>
+      <app-hlr *ngIf="plugin.pluginTitle === 'HLR'"></app-hlr>
+    </div>
   </div>
   <!-- <div
     [(ngGridItem)]="sampleItemConfigA">
