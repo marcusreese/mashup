@@ -13,7 +13,7 @@ const initialConfig = [
     config: {
       'row': 3,
       'col': 1,
-      'sizex': 6,
+      'sizex': 5,
       'sizey': 2
     }
   },

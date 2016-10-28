@@ -49,12 +49,12 @@ button {
     font-weight: bold;
     padding: 3px 8px 0px 6px;
     box-shadow: 1px 2px 3px 0px gray;
-  }
-  &:hover {
-    box-shadow: 2px 3px 3px 1px gray;
-    position: relative;
-    bottom: 1px;
-    right: 1px;
+    &:hover {
+      box-shadow: 2px 3px 3px 1px gray;
+      position: relative;
+      bottom: 1px;
+      right: 1px;
+    }
   }
   &:active {
     box-shadow: none;
