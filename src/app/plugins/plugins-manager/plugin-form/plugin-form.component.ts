@@ -12,27 +12,32 @@ export class PluginFormComponent implements OnInit {
   @Input()
   plugin: any;
 
-  submitted = false;
   // onSubmit(event) {
   //   event.preventDefault();
-  //   console.log('form submit');
+  //   console.log('form submit happened');
   // }
   plugins: any;
   constructor(public store: Store<any>) {
     this.plugins = store.select('plugins');
   }
 
-  pluginFormAccept($event) {
+  pluginFormAccept($event, dropdown, textInput, plugin) {
     $event.preventDefault();
-    this.submitted = true;
+    let payload: any = {
+      pluginTitle: textInput.value,
+      pluginName: textInput.value
+    };
+    switch (dropdown.value) {
+      case 'url':
+        payload.pluginType = 'url';
+        payload.url = textInput.value.split(' ')[0];
+    }
+    console.log('url:', payload.url);
     this.store.dispatch({
       type: ADD_PLUGIN,
-      payload: {
-        pluginTitle: 'Hello World',
-        pluginName: 'hello-world'
-      }
+      payload: payload
     });
-
+    textInput.value = '';
   }
 
   ngOnInit() {

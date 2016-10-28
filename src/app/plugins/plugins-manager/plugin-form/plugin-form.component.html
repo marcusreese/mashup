@@ -1,16 +1,16 @@
 <form
   [class]="plugin.formState || 'done'">
   <div class="form-group">
-    <select>
+    <select #dropdown>
       <option></option>
       <option>RF</option>
-      <option>URL</option>
+      <option value="url">URL (and title?)</option>
       <option>HLR</option>
       <option>Map</option>
     </select>
     <input type="text"
-           required
-           placeholder="URL + Title"
+           #textInput
+           placeholder="URL (and title?)"
            [value]="plugin.pluginTitle"
            name="textInput">
   </div>
@@ -21,8 +21,9 @@
         ✖
     </button>
     <button
+      type="submit"
       class="submitter"
-      (click)="pluginFormAccept($event)">
+      (click)="pluginFormAccept($event, dropdown, textInput, plugin)">
       ✓
     </button>
   </div>
