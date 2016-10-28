@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { DomSanitizer /*, SafeResourceUrl, SafeUrl */} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-frame',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./frame.component.scss']
 })
 export class FrameComponent implements OnInit {
+  @Input()
+  plugin: any;
 
-  constructor() { }
+  url: any;
+
+  constructor(private s: DomSanitizer) { }
 
   ngOnInit() {
+    this.url = this.s.bypassSecurityTrustResourceUrl(this.plugin.url);
   }
 
 }

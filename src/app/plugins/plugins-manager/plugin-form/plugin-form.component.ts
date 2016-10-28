@@ -23,16 +23,17 @@ export class PluginFormComponent implements OnInit {
 
   pluginFormAccept($event, dropdown, textInput, plugin) {
     $event.preventDefault();
+    const textInputs: any = textInput.value.split(' ');
+    const title = textInputs.slice(1).join(' ');
     let payload: any = {
-      pluginTitle: textInput.value,
-      pluginName: textInput.value
+      pluginTitle: title,
+      pluginName: title
     };
     switch (dropdown.value) {
       case 'url':
         payload.pluginType = 'url';
-        payload.url = textInput.value.split(' ')[0];
+        payload.url = textInputs[0];
     }
-    console.log('url:', payload.url);
     this.store.dispatch({
       type: ADD_PLUGIN,
       payload: payload

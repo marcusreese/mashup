@@ -117,9 +117,11 @@
     * test okay, serve okay, console okay
   * Create app-frame component
     * test okay, serve okay, console okay
+  * Input URL and name to box and button
+    * test okay, serve okay, console okay
+  * Send url as input to app-frame
+    * test okay, serve okay, console okay
 
-
-  * Next: generate iframe widget from form data
 
   * Next: use Node.js as proxy for iframe
 

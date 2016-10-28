@@ -8,7 +8,10 @@
         <app-plugins-manager *ngIf="plugin.pluginName === 'plugins-manager'"></app-plugins-manager>
         <app-map *ngIf="plugin.pluginName === 'map'"></app-map>
         <app-hlr *ngIf="plugin.pluginName === 'hlr'"></app-hlr>
-        <app-frame *ngIf="plugin.pluginType === 'url'"></app-frame>
+        <app-frame
+          *ngIf="plugin.pluginType === 'url'"
+          [plugin]="plugin">
+        </app-frame>
       </div>
     </div>
   </div>
