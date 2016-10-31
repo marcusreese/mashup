@@ -12,6 +12,7 @@
           *ngIf="plugin.pluginType === 'url'"
           [plugin]="plugin">
         </app-frame>
+        <app-combo-a *ngIf="plugin.pluginType === 'combo-a'"></app-combo-a>
       </div>
     </div>
   </div>

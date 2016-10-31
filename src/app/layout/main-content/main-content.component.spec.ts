@@ -11,6 +11,7 @@ import { MapComponent } from '../../plugins/map/map.component';
 import { HlrComponent } from '../../plugins/hlr/hlr.component';
 import { PluginFormComponent } from '../../plugins/plugins-manager/plugin-form/plugin-form.component';
 import { FrameComponent } from '../../plugins/frame/frame.component';
+import { ComboAComponent } from '../../plugins/combo-a/combo-a.component';
 
 describe('Component: MainContent', () => {
   beforeEach(() => {
@@ -21,7 +22,8 @@ describe('Component: MainContent', () => {
         MapComponent,
         HlrComponent,
         PluginFormComponent,
-        FrameComponent
+        FrameComponent,
+        ComboAComponent
       ],
       imports: [
         NgGridModule,

@@ -131,6 +131,17 @@
     * test okay, serve okay, console okay
   * Fix form dropdowns and non-url titles
     * test okay, serve okay, console okay
+  * Get combo-a box to display app-combo-a component
+    * test okay, serve okay, console okay
+    
+  * Get app-combo-a to display a line for each bsr
+    * test okay, serve okay, console okay
+  * Get app-combo-a to display an on/off for each bsr
+    * test okay, serve okay, console okay
+  * Get app-combo-a to display live rf status for each bsr
+    * test okay, serve okay, console okay
+  * Get app-combo-a to control rf status for each bsr
+    * test okay, serve okay, console okay
 
     
 
