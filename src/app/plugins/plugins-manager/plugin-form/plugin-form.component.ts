@@ -28,9 +28,12 @@ export class PluginFormComponent implements OnInit {
       pluginType: dropdown.value
     };
     switch (dropdown.value) {
+      case 'bsr':
+        payload.rfStatus = 'off';
+        // fall through to include url stuff also
       case 'url':
         const textInputs: any = textInput.value.split(' ');
-        const title = textInputs.slice(1).join(' ');
+        const title = textInputs.slice(1).join(' ').trim() || textInputs[0].split('//')[1];
         payload.pluginTitle = title;
         payload.pluginName = title;
         payload.url = textInputs[0];

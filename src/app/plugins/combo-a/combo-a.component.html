@@ -1,3 +1,11 @@
-<p>
-  combo-a works!
-</p>
+<!--See plugins manager for example of making this a component-->
+<div *ngFor="let plugin of (plugins | async)">
+  <div *ngIf="plugin.pluginType === 'bsr'">
+    <span >
+      {{plugin.pluginTitle}}
+    </span>
+    <span >
+      {{plugin.rfStatus}}
+    </span>
+  </div>
+</div>

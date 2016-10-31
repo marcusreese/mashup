@@ -9,7 +9,7 @@
         <app-map *ngIf="plugin.pluginName === 'map'"></app-map>
         <app-hlr *ngIf="plugin.pluginName === 'hlr'"></app-hlr>
         <app-frame
-          *ngIf="plugin.pluginType === 'url'"
+          *ngIf="plugin.pluginType === 'url' || plugin.pluginType === 'bsr'"
           [plugin]="plugin">
         </app-frame>
         <app-combo-a *ngIf="plugin.pluginType === 'combo-a'"></app-combo-a>

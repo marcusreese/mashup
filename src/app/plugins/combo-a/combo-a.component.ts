@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-combo-a',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ComboAComponent implements OnInit {
 
-  constructor() { }
+  plugins: any;
+  constructor(public store: Store<any>) {
+    this.plugins = store.select('plugins');
+  }
 
   ngOnInit() {
   }
