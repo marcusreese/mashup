@@ -23,26 +23,28 @@ export class PluginFormComponent implements OnInit {
 
   pluginFormAccept($event, dropdown, textInput, plugin) {
     $event.preventDefault();
-    const textInputs: any = textInput.value.split(' ');
-    const title = textInputs.slice(1).join(' ');
     let payload: any = {
       pluginInput: textInput.value,
-      pluginTitle: title,
-      pluginName: title
+      pluginType: dropdown.value
     };
     switch (dropdown.value) {
       case 'url':
-        payload.pluginType = 'url';
+        const textInputs: any = textInput.value.split(' ');
+        const title = textInputs.slice(1).join(' ');
+        payload.pluginTitle = title;
+        payload.pluginName = title;
         payload.url = textInputs[0];
             break;
-      case 'combo-a':
-        payload.pluginType = 'combo-a';
+      default:
+        payload.pluginTitle = textInput.value;
+        payload.pluginName = textInput.value;
     }
     this.store.dispatch({
       type: ADD_PLUGIN,
       payload: payload
     });
     textInput.value = '';
+    dropdown.value = '';
   }
 
   ngOnInit() {

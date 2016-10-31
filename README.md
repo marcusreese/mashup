@@ -129,7 +129,8 @@
     * cd src/app/plugins
     * ng g component combo-a
     * test okay, serve okay, console okay
-  * 
+  * Fix form dropdowns and non-url titles
+    * test okay, serve okay, console okay
 
     
 

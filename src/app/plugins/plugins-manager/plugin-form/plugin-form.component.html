@@ -1,7 +1,7 @@
 <form
   [class]="plugin.formState || 'done'">
   <div class="form-group">
-    <select #dropdown>
+    <select #dropdown [value]="plugin.pluginType || ''">
       <option></option>
       <option value="combo-a">Combo A</option>
       <option value="url">URL (and title?)</option>
