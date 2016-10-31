@@ -1,0 +1,29 @@
+.bsr-line {
+  background-color: white;
+  border-radius: 2px;
+  display: flex;
+  color: black;
+  margin: 4px;
+  padding: 4px 4px 4px 8px;
+}
+.bsr-label {
+  flex: 1 1 auto;
+}
+.bsr-rf-toggle {
+  flex: 0 0 65px;
+  display: flex;
+}
+.bsr-rf-status {
+  flex: 1 1 50%;
+  text-align: center;
+  color: silver;
+  &:hover:not(.current) {
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+  }
+  &.current {
+    text-decoration: underline;
+    color: black;
+  }
+}

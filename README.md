@@ -135,9 +135,9 @@
     * test okay, serve okay, console okay
   * Get app-combo-a to display a line for each bsr
     * test okay, serve okay, console okay
-    
   * Get app-combo-a to display an on/off for each bsr
-    * test okay, serve okay, console okay
+    * test okay, serve okay (except case warning), console okay
+    
   * Get app-combo-a to display live rf status for each bsr
     * test okay, serve okay, console okay
   * Get app-combo-a to control rf status for each bsr

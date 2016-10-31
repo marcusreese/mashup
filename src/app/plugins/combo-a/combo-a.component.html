@@ -1,10 +1,16 @@
 <!--See plugins manager for example of making this a component-->
 <div *ngFor="let plugin of (plugins | async)">
-  <div *ngIf="plugin.pluginType === 'bsr'">
-    <span >
+  <div *ngIf="plugin.pluginType === 'bsr'" class="bsr-line">
+    <span class="bsr-label" >
       {{plugin.pluginTitle}}
     </span>
-    <span >
+    <span class="bsr-rf-toggle">
+      <span class="bsr-rf-status off" [ngClass]="{ current: !plugin.rfOn }">
+        Off
+      </span>
+      <span class="bsr-rf-status on" [ngClass]="{ current: plugin.rfOn }">
+        On
+      </span>
       {{plugin.rfStatus}}
     </span>
   </div>
