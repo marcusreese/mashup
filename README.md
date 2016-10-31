@@ -121,7 +121,10 @@
     * test okay, serve okay, console okay
   * Send url as input to app-frame
     * test okay, serve okay, console okay
-
+  * Set up a Node.js Express server
+    * In mashup for git ease.
+    * iframe works with http://localhost:8181
+    * test okay, serve okay, console okay
 
   * Next: use Node.js as proxy for iframe
 
