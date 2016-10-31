@@ -125,8 +125,13 @@
     * In mashup for git ease.
     * iframe works with http://localhost:8181
     * test okay, serve okay, console okay
+  * Create combo-a plugin/widget
+    * cd src/app/plugins
+    * ng g component combo-a
+    * test okay, serve okay, console okay
+  * 
 
-  * Next: use Node.js as proxy for iframe
+    
 
 
   *  and create src/server/ folder.

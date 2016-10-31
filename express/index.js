@@ -3,6 +3,7 @@ var http = require('http');
 var port;
 var express = require('express');
 //var helmet = require('helmet');
+var request = require('request');
 
 var app = express();
 //app.use(helmet());
@@ -11,17 +12,25 @@ app.listen(port='8181', function () {
 });
 
 
-app.route('/') //cogz.x.expressServer.route not a function?
-  .get(function(req, res) {
-    console.log('caught by /:', req.url)
-    res.send('Get a blank');
-  })
-  .post(function(req, res) {
-    res.send('Add a blank');
-  })
-  .put(function(req, res) {
-    res.send('Update the blank');
-  });
+app.use('/url', function(req, res) {
+  // console.log('in use /url,', req.params, req.url, req.query, req.headers);
+  console.log('about to use:', req.url.slice(1));
+  // let rfStaus = request(req.url + '?feed.kpp/status');
+  // req.pipe(request(req.url.slice(1))).pipe(res);
+  res.send('Get a blank');
+});
+
+// app.route('/')
+//   .get(function(req, res) {
+//     console.log('in route /,', req.url, req.query);
+//     res.send('Get a blank');
+//   })
+//   .post(function(req, res) {
+//     res.send('Add a blank');
+//   })
+//   .put(function(req, res) {
+//     res.send('Update the blank');
+//   });
 
 
 // how to handle the route:

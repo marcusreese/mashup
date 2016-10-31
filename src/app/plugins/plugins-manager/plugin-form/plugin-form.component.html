@@ -3,7 +3,7 @@
   <div class="form-group">
     <select #dropdown>
       <option></option>
-      <option>RF</option>
+      <option value="combo-a">Combo A</option>
       <option value="url">URL (and title?)</option>
       <option>HLR</option>
       <option>Map</option>
@@ -11,7 +11,7 @@
     <input type="text"
            #textInput
            placeholder="URL (and title?)"
-           [value]="plugin.pluginTitle"
+           [value]="plugin.pluginInput || plugin.pluginTitle"
            name="textInput">
   </div>
   <div class="form-column">

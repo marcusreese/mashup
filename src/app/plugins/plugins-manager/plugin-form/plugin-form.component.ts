@@ -26,6 +26,7 @@ export class PluginFormComponent implements OnInit {
     const textInputs: any = textInput.value.split(' ');
     const title = textInputs.slice(1).join(' ');
     let payload: any = {
+      pluginInput: textInput.value,
       pluginTitle: title,
       pluginName: title
     };
@@ -33,6 +34,9 @@ export class PluginFormComponent implements OnInit {
       case 'url':
         payload.pluginType = 'url';
         payload.url = textInputs[0];
+            break;
+      case 'combo-a':
+        payload.pluginType = 'combo-a';
     }
     this.store.dispatch({
       type: ADD_PLUGIN,
