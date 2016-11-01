@@ -1,24 +1,44 @@
 
-var http = require('http');
-var port;
-var express = require('express');
-//var helmet = require('helmet');
-var request = require('request');
+let app = require('express')();
+let http = require('http').Server(app);
+let io = require('socket.io')(http);
 
-var app = express();
-//app.use(helmet());
-app.listen(port='8181', function () {
-    console.log("Server listening on: http://localhost:%s", port);
+io.on('connection', (socket) => {
+  console.log('user connected');
+
+  socket.on('disconnect', function(){
+    console.log('user disconnected');
+  });
+
+  socket.on('add-message', (message) => {
+    io.emit('message', {type:'new-message', text: message});
+  });
 });
 
-
-app.use('/url', function(req, res) {
-  // console.log('in use /url,', req.params, req.url, req.query, req.headers);
-  console.log('about to use:', req.url.slice(1));
-  // let rfStaus = request(req.url + '?feed.kpp/status');
-  // req.pipe(request(req.url.slice(1))).pipe(res);
-  res.send('Get a blank');
+http.listen(5000, () => {
+  console.log('started on port 5000');
 });
+
+// var http = require('http');
+// var port;
+// var express = require('express');
+// //var helmet = require('helmet');
+// var request = require('request');
+//
+// var app = express();
+// //app.use(helmet());
+// app.listen(port='8181', function () {
+//     console.log("Server listening on: http://localhost:%s", port);
+// });
+//
+//
+// app.use('/url', function(req, res) {
+//   // console.log('in use /url,', req.params, req.url, req.query, req.headers);
+//   console.log('about to use:', req.url.slice(1));
+//   // let rfStaus = request(req.url + '?feed.kpp/status');
+//   // req.pipe(request(req.url.slice(1))).pipe(res);
+//   res.send('Get a blank');
+// });
 
 // app.route('/')
 //   .get(function(req, res) {

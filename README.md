@@ -122,12 +122,12 @@
   * Send url as input to app-frame
     * test okay, serve okay, console okay
   * Set up a Node.js Express server
-    * In mashup for git ease.
+    * In mashup so there's just one git repo.
     * iframe works with http://localhost:8181
     * test okay, serve okay, console okay
   * Create combo-a plugin/widget
     * cd src/app/plugins
-    * ng g component combo-a
+    * `ng g component combo-a`
     * test okay, serve okay, console okay
   * Fix form dropdowns and non-url titles
     * test okay, serve okay, console okay
@@ -137,6 +137,19 @@
     * test okay, serve okay, console okay
   * Get app-combo-a to display an on/off for each bsr
     * test okay, serve okay (except case warning), console okay
+  * Set up socket.io
+    * I'd rather use express-ws but it's not well documented.
+    * `npm install socket.io --save`
+    * `npm install socket.io-client --save`
+    * Nothing else yet.
+    * test okay, serve okay, console okay
+    
+    
+  * Create ng service
+    * test okay, serve okay, console okay
+  * Or proxy request through each second? for how many?
+  Have to make that call from node anyway: 
+    * test okay, serve okay, console okay
     
   * Get app-combo-a to display live rf status for each bsr
     * test okay, serve okay, console okay
@@ -150,7 +163,55 @@
   * Next: add leaflet
   * Next: add form and api for getting web pages with lat and long for table and map
   * material design?
-
+  
+  /feed.kpp?status
+  {
+  "status": {
+  "isWarmupComplete": true,
+  "LicenseStatus": "Unknown",
+  "SupportedModes": [
+  "CDMA",
+  "GSM",
+  "UMTS",
+  "LTE",
+  "LTE_TDD",
+  "EVDO",
+  "WiMax",
+  "FixedWiMax"
+  ],
+  "SystemType": "Nebula2C",
+  "SystemSlot": 0,
+  "ActiveVersionName": "Standalone",
+  "state": "ActiveMode",
+  "FromMode": null,
+  "ToMode": null,
+  "GuiMode": "EVDO",
+  "CellularStandard": "EVDO"
+  },
+  "feedstamps": {
+  "status": 54
+  }
+  }
+  http://buff2:13003/feed.kpp?evdo_status
+{
+"evdo_status": {
+"hlrSize": 0,
+"hlrReady": false,
+"hlrRequestsOutstanding": false,
+"paramsReady": true,
+"Band": "850MHz",
+"Channel": 0,
+"PNOffset": 0,
+"CountryCode": "000",
+"SectorID": "00000000000000000000000000000000",
+"SubnetMask": 0,
+"ColorCode": 0,
+"Status": "Running"
+},
+"feedstamps": {
+"evdo_status": 37
+}
+}
 
 ## Documentation of concept decisions
 
