@@ -137,33 +137,41 @@
     * test okay, serve okay, console okay
   * Get app-combo-a to display an on/off for each bsr
     * test okay, serve okay (except case warning), console okay
-  * Set up socket.io
+  * Install socket.io
     * I'd rather use express-ws but it's not well documented.
     * `npm install socket.io --save`
     * `npm install socket.io-client --save`
+    * `npm install @types/socket.io-client --save`
     * Nothing else yet.
     * test okay, serve okay, console okay
-    
-    
+  * Create socket.io server and gen service
+    * server based on http://www.syntaxsuccess.com/viewarticle/socket.io-with-rxjs-in-angular-2.0
+    * test okay, serve okay, console okay
+  * Moved service
+    * `cd src/app/shared/services/`
+    * `ng g service external-subscribe`
+    * `cd ../../../..`
+    * imported and added to providers in app.module
+    * imported socket.io-client (@types above helped)
+    * got some websocket communication happening
+    * test okay, serve okay, console okay
+
   * Create ng service
     * test okay, serve okay, console okay
-  * Or proxy request through each second? for how many?
-  Have to make that call from node anyway: 
-    * test okay, serve okay, console okay
-    
+
   * Get app-combo-a to display live rf status for each bsr
     * test okay, serve okay, console okay
   * Get app-combo-a to control rf status for each bsr
     * test okay, serve okay, console okay
 
-    
+
 
 
   *  and create src/server/ folder.
   * Next: add leaflet
   * Next: add form and api for getting web pages with lat and long for table and map
   * material design?
-  
+
   /feed.kpp?status
   {
   "status": {

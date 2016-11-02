@@ -10,8 +10,20 @@ io.on('connection', (socket) => {
     console.log('user disconnected');
   });
 
-  socket.on('add-message', (message) => {
-    io.emit('message', {type:'new-message', text: message});
+  socket.on('requestFeedVal', (message) => {
+    console.log('message:', message);
+    console.log('typeof message:', typeof message);
+    let currentVal = 0; // request(message.url)[message.propName];
+    let intvl = setInterval(() => {
+      let newVal = currentVal + 1; // request(message.url)[message.propName];
+      if (newVal !== currentVal) {
+        io.emit('feedVal', {propName:'message.propName', val: newVal});
+        currentVal = newVal;
+      }
+      if (currentVal > 10) {
+        clearInterval(intvl);
+      }
+    }, 1000);
   });
 });
 

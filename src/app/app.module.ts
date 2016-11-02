@@ -17,6 +17,8 @@ import { HlrComponent } from './plugins/hlr/hlr.component';
 import { PluginFormComponent } from './plugins/plugins-manager/plugin-form/plugin-form.component';
 import { FrameComponent } from './plugins/frame/frame.component';
 import { ComboAComponent } from './plugins/combo-a/combo-a.component';
+import { ExternalSubscribeService } from './shared/services/external-subscribe.service';
+
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { ComboAComponent } from './plugins/combo-a/combo-a.component';
       plugins: pluginsReducer
     })
   ],
-  providers: [],
+  providers: [
+    ExternalSubscribeService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

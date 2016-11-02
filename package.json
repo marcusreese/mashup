@@ -23,6 +23,7 @@
     "@ngrx/core": "^1.2.0",
     "@ngrx/store": "^2.2.1",
     "@types/ramda": "0.0.2",
+    "@types/socket.io-client": "^1.4.27",
     "angular2-grid": "^0.11.0",
     "core-js": "^2.4.1",
     "express": "^4.14.0",
