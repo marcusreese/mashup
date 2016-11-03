@@ -29,7 +29,7 @@ export class PluginFormComponent implements OnInit {
     };
     switch (dropdown.value) {
       case 'bsr':
-        payload.rfOn = false;
+        payload.isOn = false;
         // fall through to include url stuff also
       case 'url':
         const textInputs: any = textInput.value.split(' ');

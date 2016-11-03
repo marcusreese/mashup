@@ -11,6 +11,7 @@ import { MainContentComponent } from './layout/main-content/main-content.compone
 import { FooterComponent } from './layout/footer/footer.component';
 import { footerReducer } from './shared/reducers/footer';
 import { pluginsReducer } from './shared/reducers/plugins';
+import { comboAReducer } from './shared/reducers/combo-a';
 import { PluginsManagerComponent } from './plugins/plugins-manager/plugins-manager.component';
 import { MapComponent } from './plugins/map/map.component';
 import { HlrComponent } from './plugins/hlr/hlr.component';
@@ -40,7 +41,8 @@ import { ExternalSubscribeService } from './shared/services/external-subscribe.s
     NgGridModule,
     StoreModule.provideStore({
       footerExpanded: footerReducer,
-      plugins: pluginsReducer
+      plugins: pluginsReducer,
+      comboA: comboAReducer
     })
   ],
   providers: [

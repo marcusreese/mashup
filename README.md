@@ -147,7 +147,7 @@
   * Create socket.io server and gen service
     * server based on http://www.syntaxsuccess.com/viewarticle/socket.io-with-rxjs-in-angular-2.0
     * test okay, serve okay, console okay
-  * Moved service
+  * Moved and developed service
     * `cd src/app/shared/services/`
     * `ng g service external-subscribe`
     * `cd ../../../..`
@@ -155,8 +155,31 @@
     * imported socket.io-client (@types above helped)
     * got some websocket communication happening
     * test okay, serve okay, console okay
+  * Get combo-a (on-off) to be reactive.
+    * For now, doing websockets within component as service couldn't import?
+    * For now, using separate list combo-a as using plugins made iframes flash.
+    * serve okay, console okay, toggle isBoxVisible okay, toggle footer okay
+    * Broke third app test due to timeout. Changelist is as follows:
+      	modified:   README.md
+      	modified:   express/index.js
+      	modified:   src/app/app.component.spec.ts
+      	modified:   src/app/app.module.ts
+      	modified:   src/app/layout/footer/footer.component.ts
+      	modified:   src/app/layout/main-content/main-content.component.ts
+      	modified:   src/app/plugins/combo-a/combo-a.component.html
+      	modified:   src/app/plugins/combo-a/combo-a.component.ts
+      	modified:   src/app/plugins/map/map.component.ts
+      	modified:   src/app/plugins/plugins-manager/plugin-form/plugin-form.component.ts
+      	new file:   src/app/shared/functions/toggleItemProp.ts
+      	new file:   src/app/shared/reducers/combo-a.ts
+      	modified:   src/app/shared/reducers/plugins.ts
+      	modified:   src/app/shared/services/external-subscribe.service.ts
 
-  * Create ng service
+
+  * Get on-off list looking at store plugins
+  * Get service changing store plugins
+  * Possibly change name of plugins (entities?)
+
     * test okay, serve okay, console okay
 
   * Get app-combo-a to display live rf status for each bsr

@@ -26,6 +26,7 @@ export class FooterComponent implements OnInit {
       type: TOGGLE_PLUGIN,
       payload: {
         pluginName: lowercaseName,
+        toToggle: 'isBoxVisible'
       }
     });
   }

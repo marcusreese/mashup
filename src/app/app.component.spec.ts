@@ -8,6 +8,7 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { StoreModule } from '@ngrx/store';
 import { footerReducer } from './shared/reducers/footer';
 import { pluginsReducer } from './shared/reducers/plugins';
+import { comboAReducer } from './shared/reducers/combo-a';
 import { NgGridModule } from 'angular2-grid';
 import { PluginsManagerComponent } from './plugins/plugins-manager/plugins-manager.component';
 import { MapComponent } from './plugins/map/map.component';
@@ -35,7 +36,8 @@ describe('App: Mashup', () => {
         NgGridModule,
         StoreModule.provideStore({
           footerExpanded: footerReducer,
-          plugins: pluginsReducer
+          plugins: pluginsReducer,
+          comboA: comboAReducer
         })
       ],
     });

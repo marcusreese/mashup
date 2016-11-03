@@ -1,5 +1,6 @@
 import { ActionReducer, Action } from '@ngrx/store';
 import * as R from 'ramda';
+import { toggleItemProp } from '../functions/toggleItemProp';
 
 export const ADD_PLUGIN = 'ADD_PLUGIN';
 export const TOGGLE_PLUGIN = 'TOGGLE_PLUGIN';
@@ -10,6 +11,7 @@ const initialConfig = [
     pluginName: 'map',
     // dragHandle: '.title', // not working yet
     isBoxVisible: true,
+    isOn: true,
     config: {
       'row': 3,
       'col': 1,
@@ -17,21 +19,35 @@ const initialConfig = [
       'sizey': 2
     }
   },
+  // {
+  //   pluginTitle: 'HLR',
+  //   pluginName: 'hlr',
+  //   // dragHandle: '.title', // not working yet
+  //   isBoxVisible: true,
+  //   config: {
+  //     'row': 1,
+  //     'col': 4,
+  //     'sizex': 2,
+  //     'sizey': 2
+  //   }
+  // },
   {
-    pluginTitle: 'HLR',
-    pluginName: 'hlr',
+    pluginTitle: 'External Systems',
+    pluginType: 'combo-a',
+    pluginName: 'combo-a',
     // dragHandle: '.title', // not working yet
     isBoxVisible: true,
     config: {
       'row': 1,
       'col': 4,
-      'sizex': 2,
+      'sizex': 3,
       'sizey': 2
     }
   },
   {
     pluginTitle: 'Components',
     pluginName: 'plugins-manager',
+    isOn: true,
     // dragHandle: '.title', // not working yet
     isBoxVisible: true,
     config: {
@@ -46,11 +62,8 @@ const initialConfig = [
 export const pluginsReducer: ActionReducer<Array<any>> = (state: any = initialConfig, action: Action) => {
   switch (action.type) {
     case TOGGLE_PLUGIN:
-      const rightPluginName = R.eqProps('pluginName', action.payload);
-      const toggleIsBoxVisible = R.evolve({ isBoxVisible: R.not });
-      const toggleIfClicked = R.when(rightPluginName, toggleIsBoxVisible);
-      const findAndToggleClicked = R.map(toggleIfClicked);
-      return findAndToggleClicked(state);
+      return toggleItemProp(state, action, R);
+
     case ADD_PLUGIN:
       const addToStarter = R.merge({
         isBoxVisible: true,

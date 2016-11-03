@@ -17,7 +17,7 @@ io.on('connection', (socket) => {
     let intvl = setInterval(() => {
       let newVal = currentVal + 1; // request(message.url)[message.propName];
       if (newVal !== currentVal) {
-        io.emit('feedVal', {propName:'message.propName', val: newVal});
+        io.emit('feedVal', {entityName: message.entityName, val: { num: newVal, bool: !!(newVal%2)}});
         currentVal = newVal;
       }
       if (currentVal > 10) {
