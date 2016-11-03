@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Store } from '@ngrx/store';
 import * as io from 'socket.io-client';
-import { TOGGLE_ON_OFF } from '../../shared/reducers/combo-a';
+import { TOGGLE_ON_OFF, REMEMBER_LATEST } from '../../shared/reducers/combo-a';
 
 @Component({
   selector: 'app-combo-a',
@@ -10,23 +10,30 @@ import { TOGGLE_ON_OFF } from '../../shared/reducers/combo-a';
 })
 export class ComboAComponent implements OnInit, OnDestroy {
   private socket;
-
-  plugins: any;
+  devices: any;
   constructor(public store: Store<any>) {
-    this.plugins = store.select('comboA');
+    this.devices = store.select('comboA');
     this.socket = io('http://localhost:5000');
-    // TODO: do the following line for each external system's url and name
-    this.socket.emit('requestFeedVal', {
-      propName: 'guiMode',
-      url: 'someUrl',
-      entityName: 'map'
+    this.devices.subscribe((devices) => {
+      devices.map((device) => {
+        console.log('for each device:', device.url, device.pluginName);
+        this.socket.emit('requestFeedVal', {
+          path: ['status', 'GuiMode'],
+          propName: 'cellularStandard',
+          url: device.url + '/feed.kpp?status',
+          entityName: device.pluginName,
+          current: device.cellularStandard
+        });
+      });
     });
     this.socket.on('feedVal', (data) => {
+      console.log('UPDATE:', data.update);
       this.store.dispatch({
-        type: TOGGLE_ON_OFF,
+        type: REMEMBER_LATEST,
         payload: {
           pluginName: data.entityName,
-          toToggle: 'isOn'
+          propName: data.propName,
+          value: data.value
         }
       });
     });
@@ -36,6 +43,6 @@ export class ComboAComponent implements OnInit, OnDestroy {
   }
   ngOnDestroy() {
     console.log('destroying');
-    this.socket.disconnect();
+    // this.socket.disconnect();
   }
 }

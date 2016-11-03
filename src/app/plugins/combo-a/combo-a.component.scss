@@ -1,4 +1,4 @@
-.bsr-line {
+.device-line {
   background-color: white;
   border-radius: 2px;
   display: flex;
@@ -6,14 +6,17 @@
   margin: 4px;
   padding: 4px 4px 4px 8px;
 }
-.bsr-label {
+.device-label {
   flex: 1 1 auto;
 }
-.bsr-rf-toggle {
+.device-mode {
+  flex: 1 1 auto;
+}
+.device-on-off-toggle {
   flex: 0 0 65px;
   display: flex;
 }
-.bsr-rf-status {
+.device-on-off-status {
   flex: 1 1 50%;
   text-align: center;
   color: silver;

@@ -1,14 +1,17 @@
-<!--See plugins manager for example of making this a component-->
-<div *ngFor="let plugin of (plugins | async)">
-  <div *ngIf="plugin.pluginType === 'bsr' || true" class="bsr-line">
-    <span class="bsr-label" >
-      {{plugin.pluginTitle}}
+<!--See devices manager for example of making this a component-->
+<div *ngFor="let device of (devices | async)">
+  <div *ngIf="device.pluginType === 'bsr'" class="device-line">
+    <span class="device-label" >
+      {{device.pluginTitle}}
     </span>
-    <span class="bsr-rf-toggle">
-      <span class="bsr-rf-status off" [ngClass]="{ current: !plugin.isOn }">
+    <span class="device-mode" >
+      {{device.cellularStandard}}
+    </span>
+    <span class="device-on-off-toggle">
+      <span class="device-on-off-status off" [ngClass]="{ current: !device.isOn }">
         Off
       </span>
-      <span class="bsr-rf-status on" [ngClass]="{ current: plugin.isOn }">
+      <span class="device-on-off-status on" [ngClass]="{ current: device.isOn }">
         On
       </span>
     </span>

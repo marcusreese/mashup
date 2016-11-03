@@ -1,28 +1,34 @@
-
+"use strict";
 let app = require('express')();
 let http = require('http').Server(app);
 let io = require('socket.io')(http);
+var request = require('request');
+let R = require('ramda');
 
 io.on('connection', (socket) => {
   console.log('user connected');
-
+  let intvl;
   socket.on('disconnect', function(){
+    clearInterval(intvl);
     console.log('user disconnected');
   });
 
   socket.on('requestFeedVal', (message) => {
     console.log('message:', message);
-    console.log('typeof message:', typeof message);
-    let currentVal = 0; // request(message.url)[message.propName];
-    let intvl = setInterval(() => {
-      let newVal = currentVal + 1; // request(message.url)[message.propName];
-      if (newVal !== currentVal) {
-        io.emit('feedVal', {entityName: message.entityName, val: { num: newVal, bool: !!(newVal%2)}});
-        currentVal = newVal;
-      }
-      if (currentVal > 10) {
-        clearInterval(intvl);
-      }
+    let currentVal = message.current;
+    intvl = setInterval(() => {
+      request(message.url, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+          const jsonString = body.replace(/^[\)\]}',]*/, '');
+          const jsonObj = JSON.parse(jsonString);
+          const newVal = R.path(message.path, jsonObj);
+          console.log('GuiMode:', newVal);
+          if (newVal !== currentVal) {
+            io.emit('feedVal', { entityName: message.entityName, propName: message.propName, value: newVal });
+            currentVal = newVal;
+          }
+        }
+      });
     }, 1000);
   });
 });
