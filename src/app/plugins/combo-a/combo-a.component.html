@@ -5,7 +5,7 @@
       {{device.pluginTitle}}
     </span>
     <span class="device-mode" >
-      {{device.cellularStandard}}
+      {{device.cellularStandard}} - {{space(device.band)}}
     </span>
     <span class="device-on-off-toggle" (click)='toggleRF(device)'>
       <span class="device-on-off-status off" [ngClass]="{ current: device.rfStatus !== 'Running' }">

@@ -25,9 +25,9 @@ io.on('connection', (socket) => {
           const jsonObj = JSON.parse(jsonString);
           const newVal = R.path(message.path, jsonObj);
           if (newVal !== currentVal) {
-            console.log(message.entityName, message.propName + ':', newVal);
+            console.log(message.deviceName, message.propName + ':', newVal);
             io.emit('feedVal', {
-              entityName: message.entityName,
+              deviceName: message.deviceName,
               propName: message.propName,
               value: newVal,
               url: message.url

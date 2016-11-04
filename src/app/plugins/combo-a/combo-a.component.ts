@@ -20,7 +20,7 @@ export class ComboAComponent implements OnInit, OnDestroy {
           path: ['status', 'GuiMode'],
           propName: 'cellularStandard',
           url: device.url + '/feed.kpp?status',
-          entityName: device.pluginName,
+          deviceName: device.pluginName,
           current: device.cellularStandard,
           rfStatus: device.rfStatus
         });
@@ -30,21 +30,29 @@ export class ComboAComponent implements OnInit, OnDestroy {
       this.store.dispatch({
         type: REMEMBER_LATEST,
         payload: {
-          pluginName: data.entityName,
+          pluginName: data.deviceName,
           propName: data.propName,
           value: data.value
         }
       });
       // We're dispatching too often: console.log('dispatching to store', data);
-      // TODO: move following to node adapterplugin.
+      // TODO: Move following to node adapterplugin.
       if (data.propName === 'cellularStandard') {
         const feedName = data.value.toLowerCase() + '_status';
+        // TODO: Convert this to requestFeedVals instead of requesting same feed twice.
         this.socket.emit('requestFeedVal', {
           path: [feedName, 'Status'],
           propName: 'rfStatus',
           url: data.url.split('?').slice(0, -1).concat([feedName]).join('?'),
-          entityName: data.entityName,
+          deviceName: data.deviceName,
           current: data.rfStatus // device.rfStatus // is device avalabile? has isOn, needs this?
+        });
+        this.socket.emit('requestFeedVal', {
+          path: [feedName, 'Band'],
+          propName: 'band',
+          url: data.url.split('?').slice(0, -1).concat([feedName]).join('?'),
+          deviceName: data.deviceName,
+          current: data.rfStatus
         });
       }
     });
@@ -53,6 +61,11 @@ export class ComboAComponent implements OnInit, OnDestroy {
     this.socket.emit('setFeedVal', {
       url: device.url + '/modes/service.kpp?setRFState=' + (device.rfStatus !== 'Running').toString(),
     });
+  }
+  space(band) {
+    if (band) {
+      return band.replace(/MHz/, ' MHz');
+    }
   }
   ngOnInit() {
   }

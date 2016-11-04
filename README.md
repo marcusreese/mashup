@@ -187,9 +187,12 @@
     * class="device-line {{device.rfStatus}}" worked
     * [ngClass]="{on: device.rfStatus === 'Running' }" caused drag bug
     * lite okay, browser okay, express okay
+  * Display band
+    * lite okay, browser okay, express okay
     
-    
-
+  * Allow whistle copy and paste
+  
+  
   * Possibly change name of plugins (entities?)
 
     * test okay, lite okay, browser okay, express okay
