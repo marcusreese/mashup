@@ -16,18 +16,18 @@ export class ComboAComponent implements OnInit, OnDestroy {
     this.socket = io('http://localhost:5000');
     this.devices.subscribe((devices) => {
       devices.map((device) => {
-        console.log('for each device:', device.url, device.pluginName);
         this.socket.emit('requestFeedVal', {
           path: ['status', 'GuiMode'],
           propName: 'cellularStandard',
           url: device.url + '/feed.kpp?status',
           entityName: device.pluginName,
-          current: device.cellularStandard
+          current: device.cellularStandard,
+          isOn: device.isOn,
+
         });
       });
     });
     this.socket.on('feedVal', (data) => {
-      console.log('UPDATE:', data.update);
       this.store.dispatch({
         type: REMEMBER_LATEST,
         payload: {
@@ -36,6 +36,16 @@ export class ComboAComponent implements OnInit, OnDestroy {
           value: data.value
         }
       });
+      // if (data.propName === 'cellularStandard') {
+      //   const feedName = data.value + '_status';
+      //   this.socket.emit('requestFeedVal', {
+      //     path: [feedName, 'Status'],
+      //     propName: 'rfStatus',
+      //     url: data.url + '/feed.kpp?' + feedName,
+      //     entityName: data.entityName,
+      //     current: data.isOn ? 'running' : '' // device.rfStatus // is device avalabile? has isOn, needs this?
+      //   });
+      // }
     });
   }
 

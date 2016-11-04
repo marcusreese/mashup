@@ -156,10 +156,11 @@
     * got some websocket communication happening
     * test okay, serve okay, console okay
   * Get combo-a (on-off) to be reactive.
+    * Not yet connected to real external device; just node.js stub.
     * For now, doing websockets within component as service couldn't import?
     * For now, using separate list combo-a as using plugins made iframes flash.
     * serve okay, console okay, toggle isBoxVisible okay, toggle footer okay
-    * Broke third app test due to timeout. Changelist is as follows:
+    * One test (the third app test) now failing due to timeout. Changelist:
       	modified:   README.md
       	modified:   express/index.js
       	modified:   src/app/app.component.spec.ts
@@ -174,23 +175,20 @@
       	new file:   src/app/shared/reducers/combo-a.ts
       	modified:   src/app/shared/reducers/plugins.ts
       	modified:   src/app/shared/services/external-subscribe.service.ts
+  * Get server to speak to bsr device, display its mode on client.
+    * Now two tests failing instead of one.
+    * lite okay, browser okay, express okay
+    * Maybe too much knowledge on client side?
 
+  * Use mode to determine rfStatus, display it reactively.
+  * Let click change rf status of remote device.
 
-  * Get on-off list looking at store plugins
-  * Get service changing store plugins
   * Possibly change name of plugins (entities?)
 
-    * test okay, serve okay, console okay
-
-  * Get app-combo-a to display live rf status for each bsr
-    * test okay, serve okay, console okay
-  * Get app-combo-a to control rf status for each bsr
-    * test okay, serve okay, console okay
+    * test okay, lite okay, browser okay, express okay
 
 
 
-
-  *  and create src/server/ folder.
   * Next: add leaflet
   * Next: add form and api for getting web pages with lat and long for table and map
   * material design?
