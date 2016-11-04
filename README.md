@@ -195,7 +195,9 @@
     * Commented most of the code, deleted the rest.
     * lite okay, browser okay, express okay
   * Get map, frame, and bsrs title looking better
-  
+    * lite okay, browser okay, express okay
+  * Links to open bsr in new tab
+    * lite okay, browser okay, express okay
   
   
   * Possibly change name of plugins (entities?)

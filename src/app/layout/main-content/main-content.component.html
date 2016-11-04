@@ -3,7 +3,11 @@
     [(ngGridItem)]="plugin.config"
     [hidden]="!plugin.isBoxVisible">
     <div class="flex-wrapper">
-      <div class="title">{{plugin.pluginTitle}}</div>
+      <div class="title">
+        <a [href]="plugin.url">
+          {{plugin.pluginTitle}}
+        </a>
+      </div>
       <div class="box-contents">
         <!--TODO: find a better structure than all these ngIfs-->
         <app-plugins-manager *ngIf="plugin.pluginName === 'plugins-manager'"></app-plugins-manager>
