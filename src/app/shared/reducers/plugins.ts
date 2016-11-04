@@ -15,7 +15,7 @@ const initialConfig = [
     config: {
       'row': 3,
       'col': 1,
-      'sizex': 5,
+      'sizex': 2,
       'sizey': 2
     }
   },
@@ -32,7 +32,7 @@ const initialConfig = [
   //   }
   // },
   {
-    pluginTitle: 'External Systems',
+    pluginTitle: 'BSRs',
     pluginType: 'combo-a',
     pluginName: 'combo-a',
     // dragHandle: '.title', // not working yet

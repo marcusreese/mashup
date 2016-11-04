@@ -191,6 +191,11 @@
     * lite okay, browser okay, express okay if no non-bsr url used
   * Allow whistle copy and paste (non-bsr url)
     * lite okay, browser okay, express okay
+  * Tried and failed to control whistle via post request
+    * Commented most of the code, deleted the rest.
+    * lite okay, browser okay, express okay
+  * Get map, frame, and bsrs title looking better
+  
   
   
   * Possibly change name of plugins (entities?)
