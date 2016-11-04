@@ -39,9 +39,10 @@ app-map {
 /* adapted from combo-a.component.scss */
 .title {
   display: flex;
+  justify-content: space-between;
 }
 a {
-  flex: 1 1 auto;
+  flex: 0 1 auto;
 }
 
 /* copied from combo-a.component.scss */

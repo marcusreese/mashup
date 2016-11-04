@@ -4,7 +4,7 @@
     [hidden]="!plugin.isBoxVisible">
     <div class="flex-wrapper">
       <div class="title">
-        <a [href]="plugin.url">
+        <a [href]="plugin.url" target="_blank">
           {{plugin.pluginTitle}}
         </a>
         <span class="device-on-off-toggle" *ngIf="plugin.pluginType === 'combo-a'">

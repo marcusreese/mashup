@@ -200,6 +200,8 @@
     * lite okay, browser okay, express okay
   * Allow to turn all bsrs on/off
     * lite okay, browser okay, express okay
+  * Fix title links and form dropdown
+    * lite okay, browser okay, express okay
   
   
   * Possibly change name of plugins (entities?)
