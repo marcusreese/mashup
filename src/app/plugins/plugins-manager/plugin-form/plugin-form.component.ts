@@ -27,20 +27,15 @@ export class PluginFormComponent implements OnInit {
       pluginInput: textInput.value,
       pluginType: dropdown.value
     };
-    switch (dropdown.value) {
-      case 'bsr':
-        payload.isOn = false;
-        // fall through to include url stuff also
-      case 'url':
-        const textInputs: any = textInput.value.split(' ');
-        const title = textInputs.slice(1).join(' ').trim() || textInputs[0].split('//')[1];
-        payload.pluginTitle = title;
-        payload.pluginName = title;
-        payload.url = textInputs[0];
-        break;
-      default:
-        payload.pluginTitle = textInput.value;
-        payload.pluginName = textInput.value;
+    if (/^(bsr|url)$/.test(dropdown.value)) {
+      const textInputs: any = textInput.value.split(' ');
+      const title = textInputs.slice(1).join(' ').trim() || textInputs[0].split('//')[1];
+      payload.pluginTitle = title;
+      payload.pluginName = title;
+      payload.url = textInputs[0];
+    } else {
+      payload.pluginTitle = textInput.value;
+      payload.pluginName = textInput.value;
     }
     this.store.dispatch({
       type: ADD_PLUGIN,

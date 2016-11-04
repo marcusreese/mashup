@@ -179,9 +179,13 @@
     * Now two tests failing instead of one.
     * lite okay, browser okay, express okay
     * Maybe too much knowledge on client side?
-
-  * Use mode to determine rfStatus, display it reactively.
-  * Let click change rf status of remote device.
+  * Get rfStatus wired up
+    * Use mode to determine rfStatus, display it reactively.
+    * Let click change rf status of remote device.
+    * lite okay, browser okay, express okay
+    
+    
+    * lite okay, browser okay, express okay
 
   * Possibly change name of plugins (entities?)
 

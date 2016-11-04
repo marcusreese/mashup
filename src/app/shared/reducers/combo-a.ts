@@ -10,7 +10,7 @@ const initialConfig = [
   // {
   //   pluginTitle: 'Map',
   //   pluginName: 'map',
-  //   isOn: true,
+  //   rfStatus: true,
   // },
   // {
   //   pluginTitle: 'External Systems',

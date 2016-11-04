@@ -6,7 +6,7 @@ var request = require('request');
 let R = require('ramda');
 
 io.on('connection', (socket) => {
-  console.log('user connected');
+  console.log('browser connected');
   let intvl;
   socket.on('disconnect', function(){
     clearInterval(intvl);
@@ -14,22 +14,39 @@ io.on('connection', (socket) => {
   });
 
   socket.on('requestFeedVal', (message) => {
-    console.log('message:', message);
     let currentVal = message.current;
+    // console.log('got msg:', message);
     intvl = setInterval(() => {
       request(message.url, function (error, response, body) {
-        if (!error && response.statusCode == 200) {
+        if (error || response.statusCode != 200) {
+          console.log('Get request failed:', (response ? response.statusCode : ''), error);
+        } else {
           const jsonString = body.replace(/^[\)\]}',]*/, '');
           const jsonObj = JSON.parse(jsonString);
           const newVal = R.path(message.path, jsonObj);
-          console.log('GuiMode:', newVal);
           if (newVal !== currentVal) {
-            io.emit('feedVal', { entityName: message.entityName, propName: message.propName, value: newVal });
+            console.log(message.entityName, message.propName + ':', newVal);
+            io.emit('feedVal', {
+              entityName: message.entityName,
+              propName: message.propName,
+              value: newVal,
+              url: message.url
+            });
             currentVal = newVal;
           }
         }
       });
     }, 1000);
+  });
+
+  socket.on('setFeedVal', (message) => {
+    request(message.url, function (error, response, body) {
+      if (error || response.statusCode != 200) {
+        console.log('Set request failed:', (response ? response.statusCode : ''), error);
+      } else {
+        console.log("Passed on set request:", message.url.split('?')[1]);
+      }
+    });
   });
 });
 

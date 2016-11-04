@@ -7,11 +7,11 @@
     <span class="device-mode" >
       {{device.cellularStandard}}
     </span>
-    <span class="device-on-off-toggle">
-      <span class="device-on-off-status off" [ngClass]="{ current: !device.isOn }">
+    <span class="device-on-off-toggle" (click)='toggleRF(device)'>
+      <span class="device-on-off-status off" [ngClass]="{ current: device.rfStatus !== 'Running' }">
         Off
       </span>
-      <span class="device-on-off-status on" [ngClass]="{ current: device.isOn }">
+      <span class="device-on-off-status on" [ngClass]="{ current: device.rfStatus === 'Running' }">
         On
       </span>
     </span>
