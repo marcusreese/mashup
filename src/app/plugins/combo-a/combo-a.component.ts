@@ -15,7 +15,10 @@ export class ComboAComponent implements OnInit, OnDestroy {
     this.devices = store.select('comboA');
     this.socket = io('http://localhost:5000');
     this.devices.subscribe((devices) => {
-      devices.map((device) => {
+      devices.forEach((device) => {
+        if (device.pluginType !== 'bsr') {
+          return;
+        }
         this.socket.emit('requestFeedVal', {
           path: ['status', 'GuiMode'],
           propName: 'cellularStandard',
