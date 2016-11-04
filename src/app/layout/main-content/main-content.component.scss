@@ -34,3 +34,32 @@ app-map {
     height: 56px;
     z-index: 0;
 }
+
+
+/* adapted from combo-a.component.scss */
+.title {
+  display: flex;
+}
+a {
+  flex: 1 1 auto;
+}
+
+/* copied from combo-a.component.scss */
+.device-on-off-toggle {
+  flex: 0 0 65px;
+  display: flex;
+}
+.device-on-off-status {
+  flex: 1 1 50%;
+  text-align: center;
+  color: silver;
+  &:hover:not(.current) {
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+  }
+  &.current {
+    text-decoration: underline;
+    color: black;
+  }
+}

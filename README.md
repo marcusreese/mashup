@@ -198,6 +198,8 @@
     * lite okay, browser okay, express okay
   * Links to open bsr in new tab
     * lite okay, browser okay, express okay
+  * Allow to turn all bsrs on/off
+    * lite okay, browser okay, express okay
   
   
   * Possibly change name of plugins (entities?)

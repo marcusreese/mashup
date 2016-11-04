@@ -1,5 +1,9 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, OnDestroy } from '@angular/core';
 import { Store } from '@ngrx/store';
+import * as io from 'socket.io-client';
+// import {Observable} from 'rxjs/Rx';
+import 'rxjs/add/operator/take';
+import { REMEMBER_LATEST } from '../../shared/reducers/combo-a';
 
 @Component({
   selector: 'app-main-content',
@@ -7,7 +11,7 @@ import { Store } from '@ngrx/store';
   styleUrls: ['./main-content.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class MainContentComponent implements OnInit {
+export class MainContentComponent implements OnInit, OnDestroy {
   gridOptions = {
     // limit_to_screen: true,
     visible_rows: 6,
@@ -33,12 +37,45 @@ export class MainContentComponent implements OnInit {
   //   'sizey': 2
   // };
 
+  private socket;
   plugins: any;
   constructor(public store: Store<any>) {
     this.plugins = store.select('plugins');
+    this.socket = io('http://localhost:5000');
+    this.socket.on('feedVal', (data) => {
+      this.store.dispatch({
+        type: REMEMBER_LATEST,
+        payload: {
+          pluginName: data.deviceName,
+          propName: data.propName,
+          value: data.value
+        }
+      });
+    });
+  }
+
+  allRF(bool) {
+    this.store.select('comboA').take(1).subscribe((devices: any) => {
+      devices.map(device => {
+        if (device.pluginType === 'bsr') {
+          this.socket.emit('setFeedVal', {
+            url: device.url + '/modes/service.kpp?setRFState=' + bool
+          });
+        }
+      });
+    });
   }
 
   ngOnInit() {
+  }
+
+
+  ngOnDestroy() {
+    // console.log('destroying combo');
+    if (this.socket) {
+      this.socket.disconnect();
+      this.socket = null;
+    }
   }
 
 }

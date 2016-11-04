@@ -7,6 +7,14 @@
         <a [href]="plugin.url">
           {{plugin.pluginTitle}}
         </a>
+        <span class="device-on-off-toggle" *ngIf="plugin.pluginType === 'combo-a'">
+          <span class="device-on-off-status off" (click)="allRF(false)">
+            Off
+          </span>
+          <span class="device-on-off-status on" (click)="allRF(true)">
+            On
+          </span>
+        </span>
       </div>
       <div class="box-contents">
         <!--TODO: find a better structure than all these ngIfs-->

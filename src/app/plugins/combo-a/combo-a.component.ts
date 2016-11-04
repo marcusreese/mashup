@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Store } from '@ngrx/store';
 import * as io from 'socket.io-client';
-import { TOGGLE_ON_OFF, REMEMBER_LATEST } from '../../shared/reducers/combo-a';
+import { REMEMBER_LATEST } from '../../shared/reducers/combo-a';
 
 @Component({
   selector: 'app-combo-a',
@@ -61,7 +61,6 @@ export class ComboAComponent implements OnInit, OnDestroy {
     });
   }
   toggleRF(device) {
-    console.log('Trying to toggle', device.pluginTitle);
     if (device.pluginType === 'bsr') {
       this.socket.emit('setFeedVal', {
         url: device.url + '/modes/service.kpp?setRFState=' + (device.rfStatus !== 'Running').toString()
@@ -95,7 +94,10 @@ export class ComboAComponent implements OnInit, OnDestroy {
   ngOnInit() {
   }
   ngOnDestroy() {
-    console.log('destroying');
-    // this.socket.disconnect();
+    // console.log('destroying combo');
+    if (this.socket) {
+      this.socket.disconnect();
+      this.socket = null;
+    }
   }
 }
