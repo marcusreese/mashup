@@ -48,7 +48,18 @@ io.on('connection', (socket) => {
       }
     });
   });
+
+  // socket.on('sendPost', (message) => {
+  //   request.post({url: message.url, json: message.data}, function (error, response, body){
+  //     if (error || response.statusCode != 200) {
+  //       console.log('Send failed:', (response ? response.statusCode : ''), error);
+  //     } else {
+  //       console.log("Sent:", message.url.split('?')[1]);
+  //     }
+  //   });
+  // });
 });
+
 
 http.listen(5000, () => {
   console.log('started on port 5000');

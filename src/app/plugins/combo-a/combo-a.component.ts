@@ -61,9 +61,31 @@ export class ComboAComponent implements OnInit, OnDestroy {
     });
   }
   toggleRF(device) {
-    this.socket.emit('setFeedVal', {
-      url: device.url + '/modes/service.kpp?setRFState=' + (device.rfStatus !== 'Running').toString(),
-    });
+    console.log('Trying to toggle', device.pluginTitle);
+    if (device.pluginType === 'bsr') {
+      this.socket.emit('setFeedVal', {
+        url: device.url + '/modes/service.kpp?setRFState=' + (device.rfStatus !== 'Running').toString()
+      });
+    } else {
+    //   const turnOffWhistle = {
+    //     "clientId": "14",
+    //     "requests": [
+    //       {
+    //         "channel": "/wstl",
+    //         "data": {
+    //           "type": "pause-range",
+    //           "requestId": "43"
+    //         }
+    //       }
+    //     ]
+    //   };
+    //   // const turnOffWhistle = '{"clientId":"14", "requests":[{"channel":"/wstl", "data":{"type":"pause-range", "msg":{"sourceId":0, "range":{"startFreq":"1870000000", "endFreq":"1930000000", "rangeID":"1"}}}, "requestId":"26"}]}';
+    //   this.socket.emit('sendPost', {
+    //     url: 'http://whistle07:8888/WstlGui/Wstl', //http://whistle07:8888/#wstl-just-analyzer
+    //     data: turnOffWhistle
+    // });
+
+    }
   }
   space(band) {
     if (band) {

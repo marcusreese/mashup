@@ -42,7 +42,7 @@ export class PluginFormComponent implements OnInit {
       payload: payload
     });
     textInput.value = '';
-    dropdown.value = '';
+    dropdown.value = 'bsr';
   }
 
   ngOnInit() {
