@@ -1,6 +1,6 @@
 <!--See devices manager for example of making this a component-->
 <div *ngFor="let device of (devices | async)">
-  <div *ngIf="device.pluginType === 'bsr'" class="device-line">
+  <div *ngIf="device.pluginType === 'bsr'" class="device-line {{device.rfStatus}}">
     <span class="device-label" >
       {{device.pluginTitle}}
     </span>

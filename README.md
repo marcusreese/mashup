@@ -183,9 +183,12 @@
     * Use mode to determine rfStatus, display it reactively.
     * Let click change rf status of remote device.
     * lite okay, browser okay, express okay
-    
-    
+  * Adjust colors of combo lines
+    * class="device-line {{device.rfStatus}}" worked
+    * [ngClass]="{on: device.rfStatus === 'Running' }" caused drag bug
     * lite okay, browser okay, express okay
+    
+    
 
   * Possibly change name of plugins (entities?)
 

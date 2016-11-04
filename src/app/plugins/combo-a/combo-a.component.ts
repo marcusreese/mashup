@@ -27,7 +27,6 @@ export class ComboAComponent implements OnInit, OnDestroy {
       });
     });
     this.socket.on('feedVal', (data) => {
-      console.log('dispatching to store', data);
       this.store.dispatch({
         type: REMEMBER_LATEST,
         payload: {
@@ -36,6 +35,8 @@ export class ComboAComponent implements OnInit, OnDestroy {
           value: data.value
         }
       });
+      // We're dispatching too often: console.log('dispatching to store', data);
+      // TODO: move following to node adapterplugin.
       if (data.propName === 'cellularStandard') {
         const feedName = data.value.toLowerCase() + '_status';
         this.socket.emit('requestFeedVal', {
@@ -49,7 +50,6 @@ export class ComboAComponent implements OnInit, OnDestroy {
     });
   }
   toggleRF(device) {
-    console.log('Toggling');
     this.socket.emit('setFeedVal', {
       url: device.url + '/modes/service.kpp?setRFState=' + (device.rfStatus !== 'Running').toString(),
     });
