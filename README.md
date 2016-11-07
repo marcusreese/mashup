@@ -202,66 +202,37 @@
     * lite okay, browser okay, express okay
   * Fix title links and form dropdown
     * lite okay, browser okay, express okay
-  
-  
-  * Possibly change name of plugins (entities?)
 
-    * test okay, lite okay, browser okay, express okay
-
-
-
-  * Next: add leaflet
-  * Next: add form and api for getting web pages with lat and long for table and map
+LATER
+  * Stop duplicating socket.io-client code (main.. & combo-a..)
+  * x to remove component/widget
+  * prob refactor to put node logic in node
+  * mini.html
+  * touch screen
+  * prevent js errors when resizing too fast etc.
+  * have a better resize handle that doesn't cause scrolling (bottom right)
+  * leaflet
+  * remote only bsrs (control rf without huge client resource drain)
+  * routes?
   * material design?
 
-  /feed.kpp?status
-  {
-  "status": {
-  "isWarmupComplete": true,
-  "LicenseStatus": "Unknown",
-  "SupportedModes": [
-  "CDMA",
-  "GSM",
-  "UMTS",
-  "LTE",
-  "LTE_TDD",
-  "EVDO",
-  "WiMax",
-  "FixedWiMax"
-  ],
-  "SystemType": "Nebula2C",
-  "SystemSlot": 0,
-  "ActiveVersionName": "Standalone",
-  "state": "ActiveMode",
-  "FromMode": null,
-  "ToMode": null,
-  "GuiMode": "EVDO",
-  "CellularStandard": "EVDO"
-  },
-  "feedstamps": {
-  "status": 54
-  }
-  }
-  http://buff2:13003/feed.kpp?evdo_status
-{
-"evdo_status": {
-"hlrSize": 0,
-"hlrReady": false,
-"hlrRequestsOutstanding": false,
-"paramsReady": true,
-"Band": "850MHz",
-"Channel": 0,
-"PNOffset": 0,
-"CountryCode": "000",
-"SectorID": "00000000000000000000000000000000",
-"SubnetMask": 0,
-"ColorCode": 0,
-"Status": "Running"
-},
-"feedstamps": {
-"evdo_status": 37
-}
-}
+  * Spark week charging: took maybe 52.5? (40 as me, 12.5 as Ryan?)
+  * Notes for bsrsims we did in cud:
+simA 13000
+./_linux_x86.obs/BSRsim -p 40137 -s 5998 -d 5124 
+
+simM 13001
+./_linux_x86.obs/BSRsim -p 40138 -s 5999 -d 5125 
+
+simO 13002 DIDN'T WORK
+./_linux_x86.obs/BSRsim -p 40139 -s 6000 -d 5126 
+
+simC 13003
+./_linux_x86.obs/BSRsim -p 40136 -s 5997 -d 5123
+
+/export/home/mreese/P4/mreese_cud/tools.pj/tools.ss/bsrsim.pj
+
+
 
 ## Documentation of concept decisions
 
