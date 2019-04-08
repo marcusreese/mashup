@@ -1,5 +1,7 @@
 # Mashup
 
+This was a proof-of-concept for LGS that never went anywhere. Abandoned.
+
 ## How to get code and contribute
   * In console, `git clone https://github.com/marcusreese/mashup.git`
   * `npm install`
